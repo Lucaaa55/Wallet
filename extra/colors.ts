@@ -1,0 +1,17 @@
+export const colors = {
+    white: '#FFFFFF',
+    black: '#000000',
+    gray: '#808080',
+    yellow: '#FFD000',
+    orange: '#FF7F50',
+    red: '#FF0000',
+    blue: '#007FFF',
+    yellowSoft: '#EAF5FF',
+    blueSoft: '#EAF5FF',
+    soft: '#E0E0E090',
+    light: '#80808010',
+    violet: '#5F4FC8',
+    back: '#F7F7F7',
+    violetLight: '#F2EAFF',
+    border: '#E8EAEB',
+}
