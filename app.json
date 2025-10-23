@@ -61,6 +61,12 @@
           "faceIDPermission": "Allow $(PRODUCT_NAME) to use Face ID."
         }
       ]
-    ]
+    ],
+    "extra": {
+      "router": {},
+      "eas": {
+        "projectId": "7c38b42f-c12c-43c2-a28b-cde1db080db8"
+      }
+    }
   }
 }
