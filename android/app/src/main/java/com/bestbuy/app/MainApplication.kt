@@ -1,4 +1,4 @@
-package com.wave
+package com.bestbuy.app
 
 import android.app.Application
 import android.content.res.Configuration

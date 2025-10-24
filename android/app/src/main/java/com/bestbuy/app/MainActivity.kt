@@ -1,4 +1,4 @@
-package com.wave
+package com.bestbuy.app
 import expo.modules.splashscreen.SplashScreenManager
 
 import android.os.Build

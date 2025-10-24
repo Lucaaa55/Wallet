@@ -1,8 +1,8 @@
 {
   "expo": {
-    "name": "Wave",
-    "slug": "Wave",
-    "scheme": "com.wave",
+    "name": "Best Buy",
+    "slug": "Best Buy",
+    "scheme": "com.bestbuy.app",
     "version": "1.0.0",
     "orientation": "portrait",
     "icon": "./assets/icon.png",
@@ -11,11 +11,11 @@
     "splash": {
       "image": "./assets/splash-icon.png",
       "resizeMode": "contain",
-      "backgroundColor": "#3777F0"
+      "backgroundColor": "#0146BE"
     },
     "ios": {
       "supportsTablet": true,
-      "bundleIdentifier": "com.wave",
+      "bundleIdentifier": "com.bestbuy.app",
       "infoPlist": {
         "ITSAppUsesNonExemptEncryption": false,
         "LSApplicationQueriesSchemes": [
@@ -37,9 +37,9 @@
     "android": {
       "adaptiveIcon": {
         "foregroundImage": "./assets/adaptive-icon.png",
-        "backgroundColor": "#3777F0"
+        "backgroundColor": "#0146BE"
       },
-      "package": "com.wave",
+      "package": "com.bestbuy.app",
       "permissions": [
         "android.permission.USE_BIOMETRIC",
         "android.permission.USE_FINGERPRINT"
@@ -61,12 +61,6 @@
           "faceIDPermission": "Allow $(PRODUCT_NAME) to use Face ID."
         }
       ]
-    ],
-    "extra": {
-      "router": {},
-      "eas": {
-        "projectId": "7c38b42f-c12c-43c2-a28b-cde1db080db8"
-      }
-    }
+    ]
   }
 }

@@ -26,8 +26,8 @@
         <action android:name="android.intent.action.VIEW"/>
         <category android:name="android.intent.category.DEFAULT"/>
         <category android:name="android.intent.category.BROWSABLE"/>
-        <data android:scheme="com.wave"/>
-        <data android:scheme="exp+wave"/>
+        <data android:scheme="com.bestbuy.app"/>
+        <data android:scheme="exp+bestbuy"/>
       </intent-filter>
     </activity>
   </application>
