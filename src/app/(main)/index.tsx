@@ -24,23 +24,30 @@ export default function Page() {
             <StatusBar barStyle={'default'} />
 
             <SafeAreaView style={styles.container}>
-                <View style={styles.view}>
-                    <Text style={styles.amount}>{amount}</Text>
-                    <View style={styles.actions}>
-                        <TouchableOpacity style={styles.action}>
-                            <QrCode size={27} color={colors.yellow} />
-                        </TouchableOpacity>
-                        <TouchableOpacity style={styles.action}>
-                            <BanknoteArrowDown size={27} color={colors.yellow} />
-                        </TouchableOpacity>
-                        <TouchableOpacity style={styles.action}>
-                            <MoveRight size={27} color={colors.yellow} />
-                        </TouchableOpacity>
-                    </View>
+                <View>
+                    <Text style={styles.title}>Hola, {'Luca'}!</Text>
                 </View>
+                <ScrollView contentContainerStyle={styles.content} style={styles.scrollView}>
+                    <Text>Hola</Text>
 
-                <ScrollView contentContainerStyle={styles.content} style={styles.scroll}>
-                    {}
+                    <View style={styles.view}>
+                        <Text style={styles.amount}>{amount}</Text>
+                        <View style={styles.actions}>
+                            <TouchableOpacity style={styles.action}>
+                                <QrCode size={27} color={colors.blue} />
+                            </TouchableOpacity>
+                            <TouchableOpacity style={styles.action}>
+                                <BanknoteArrowDown size={27} color={colors.blue} />
+                            </TouchableOpacity>
+                            <TouchableOpacity style={styles.action}>
+                                <MoveRight size={27} color={colors.blue} />
+                            </TouchableOpacity>
+                        </View>
+                    </View>
+
+                    <View>
+                        <Text>Hola</Text>
+                    </View>
                 </ScrollView>
             </SafeAreaView>
         </>
@@ -54,7 +61,7 @@ const styles = StyleSheet.create({
         flexDirection: 'column',
         alignItems: 'center',
         flex: 1,
-        backgroundColor: colors.back,
+        backgroundColor: colors.darkGray,
         gap: '5%',
     },
     actions: {
@@ -67,7 +74,7 @@ const styles = StyleSheet.create({
         width: 60,
         height: 60,
         borderRadius: 999,
-        backgroundColor: colors.yellowSoft,
+        backgroundColor: colors.blueSoft,
         display: 'flex',
         justifyContent: 'center',
         alignItems: 'center',
@@ -84,16 +91,21 @@ const styles = StyleSheet.create({
         alignItems: 'center',
         gap: '10%',
     },
-    scroll: {
-        borderWidth: 1,
-        borderColor: colors.border,
+    scrollView: {
         flexGrow: 0,
-        height: '40%',
-        backgroundColor: colors.white,
-        width: '90%',
-        borderRadius: 12,
+        height: '100%',
+        width: '100%',
+        backgroundColor: colors.back,
     },
-    content: {},
+    content: {
+        alignContent: 'center',
+        alignItems: 'center',
+        justifyContent: 'flex-start',
+        display: 'flex',
+        flexDirection: 'column',
+        flex: 1,
+        gap: '5%',
+    },
     amount: {
         fontSize: 50,
         fontWeight: '500',
@@ -102,8 +114,9 @@ const styles = StyleSheet.create({
     },
     cotis: {
         width: '90%',
+        backgroundColor: colors.white,
         borderWidth: 1,
-        borderColor: colors.soft,
+        borderColor: colors.border,
         height: 100,
         borderRadius: 12,
     },

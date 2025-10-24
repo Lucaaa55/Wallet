@@ -2,7 +2,7 @@ import { colors } from '$/extra/colors'
 import { useFonts } from 'expo-font'
 import { router, Stack, Tabs } from 'expo-router'
 import { Drawer } from 'expo-router/drawer'
-import { Pressable, StyleSheet, Text, View } from 'react-native'
+import { StyleSheet, Text, View } from 'react-native'
 import * as Haptics from 'expo-haptics'
 import Svg, { Path } from 'react-native-svg'
 import { Home, CreditCard, UserCircle, ReceiptText } from 'lucide-react-native'
@@ -18,7 +18,7 @@ export default function Layout() {
                     tabBarItemStyle: {
                         marginTop: '3%',
                     },
-                    tabBarActiveTintColor: colors.yellow,
+                    tabBarActiveTintColor: colors.blue,
                     tabBarInactiveTintColor: colors.gray,
                 }}
             >
@@ -36,6 +36,13 @@ export default function Layout() {
                         <CreditCard size={size} color={color} strokeWidth={1.5} />
                     ),
                 }} />
+                <Tabs.Screen name={'facturas'} options={{
+                    headerShown: false,
+                    tabBarLabel: 'Facturas',
+                    tabBarIcon: ({ color, size }) => (
+                        <ReceiptText size={size} color={color} strokeWidth={1.5} />
+                    ),
+                }} />
                 <Tabs.Screen name={'settings'} options={{
                     headerShown: false,
                     tabBarLabel: 'Cuenta',
@@ -47,7 +54,7 @@ export default function Layout() {
                     headerShown: false,
                     tabBarItemStyle: {
                         display: 'none',
-                    },
+                        },
                 }} />
             </Tabs>
         </UserInactivityProvider>

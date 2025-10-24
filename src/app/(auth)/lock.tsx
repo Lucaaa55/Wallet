@@ -183,7 +183,7 @@ const styles = StyleSheet.create({
         width: '90%',
     },
     dotFilled: {
-        backgroundColor: colors.yellow,
+        backgroundColor: colors.blue,
     },
     dotEmpty: {
         backgroundColor: colors.soft,

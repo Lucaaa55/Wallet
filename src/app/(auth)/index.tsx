@@ -59,7 +59,7 @@ export default function Page() {
                         }]}>Ya tengo cuenta</Text>
                     </TouchableOpacity>
                     <TouchableOpacity activeOpacity={1} style={[styles.button, {
-                        backgroundColor: colors.yellow,
+                        backgroundColor: colors.blue,
                     }]} onPress={() => Press('/register')}>
                         <Text style={[styles.buttonText, {
                             color: colors.white,
@@ -78,7 +78,7 @@ const styles = StyleSheet.create({
         flexDirection: 'column',
         alignItems: 'center',
         flex: 1,
-        backgroundColor: colors.yellow,
+        backgroundColor: colors.blue,
     },
     icon: {
         opacity: 0,
