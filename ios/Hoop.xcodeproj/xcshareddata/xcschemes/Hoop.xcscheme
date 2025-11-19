@@ -15,9 +15,9 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "13B07F861A680F5B00A75B9A"
-               BuildableName = "BestBuy.app"
-               BlueprintName = "BestBuy"
-               ReferencedContainer = "container:BestBuy.xcodeproj">
+               BuildableName = "Hoop.app"
+               BlueprintName = "Hoop"
+               ReferencedContainer = "container:Hoop.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
@@ -33,9 +33,9 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "00E356ED1AD99517003FC87E"
-               BuildableName = "BestBuyTests.xctest"
-               BlueprintName = "BestBuyTests"
-               ReferencedContainer = "container:BestBuy.xcodeproj">
+               BuildableName = "HoopTests.xctest"
+               BlueprintName = "HoopTests"
+               ReferencedContainer = "container:Hoop.xcodeproj">
             </BuildableReference>
          </TestableReference>
       </Testables>
@@ -55,9 +55,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "13B07F861A680F5B00A75B9A"
-            BuildableName = "BestBuy.app"
-            BlueprintName = "BestBuy"
-            ReferencedContainer = "container:BestBuy.xcodeproj">
+            BuildableName = "Hoop.app"
+            BlueprintName = "Hoop"
+            ReferencedContainer = "container:Hoop.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </LaunchAction>
@@ -72,9 +72,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "13B07F861A680F5B00A75B9A"
-            BuildableName = "BestBuy.app"
-            BlueprintName = "BestBuy"
-            ReferencedContainer = "container:BestBuy.xcodeproj">
+            BuildableName = "Hoop.app"
+            BlueprintName = "Hoop"
+            ReferencedContainer = "container:Hoop.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </ProfileAction>

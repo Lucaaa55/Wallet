@@ -1,4 +1,4 @@
-package com.bestbuy.app
+package com.hoop.app
 import expo.modules.splashscreen.SplashScreenManager
 
 import android.os.Build

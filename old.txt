@@ -1,10 +1,10 @@
+import { ActivityIndicator, Alert, Button, Dimensions, Image, NativeModules, RefreshControl, ScrollView, StatusBar, StyleSheet, Text, TextInput, TouchableOpacity, View } from 'react-native'
 import { useEffect, useRef, useState } from 'react'
-import { ActivityIndicator, Alert, Button, Dimensions, Image, NativeModules, NativeScrollEvent, NativeSyntheticEvent, RefreshControl, ScrollView, StatusBar, StyleSheet, Text, TextInput, TouchableOpacity, View } from 'react-native'
 import { colors } from '$/extra/colors'
 import { useRouter } from 'expo-router'
 import * as Haptics from 'expo-haptics'
 import { useNotes } from '@/hooks/useNotes'
-import { ArrowDownLeft, ArrowUp, ArrowUpRight, BanknoteArrowDown, ChevronRight, Eye, EyeOff, Landmark, Link, MoveRight, Plus, QrCode, Scan, ScanQrCode, Search } from 'lucide-react-native'
+import { ArrowDown, ArrowDownLeft, ArrowUp, ArrowUpRight, BanknoteArrowDown, ChevronRight, Eye, EyeOff, Landmark, Link, MoveRight, Plus, QrCode, Scan, ScanQrCode, Search } from 'lucide-react-native'
 import { Chat } from '@/types/include'
 import ContextMenu from 'react-native-context-menu-view'
 import { config } from '$/extra/config'
@@ -29,8 +29,7 @@ export default function Page() {
     }
 
     const [hide, setHide] = useState(false)
-    const [amount, setAmount] = useState('346.583,05')
-    const [scrollY, setScrollY] = useState(0)
+    const [amount, setAmount] = useState('0,01')
     const [growthPercentage, setGrowthPercentage] = useState('0')
     const [cotis, setCotis] = useState({
         compra: '1.480,00',
@@ -78,19 +77,12 @@ export default function Page() {
         Haptics.impactAsync(Haptics.ImpactFeedbackStyle.Medium)
     }
 
-    const handleScroll = (event: NativeSyntheticEvent<NativeScrollEvent>) => {
-        setScrollY(event.nativeEvent.contentOffset.y)
-    }
-
     return (
         <>
             <StatusBar barStyle={'default'} />
 
             <SafeAreaView style={styles.container}>
-                <View style={[styles.header, {
-                    borderBottomColor: colors.border,
-                    borderBottomWidth: scrollY > 0 ? 1 : 0,
-                }]}>
+                <View style={styles.header}>
                     <Text style={styles.title}>Hola, {'Luca'}!</Text>
                     <View style={styles.headerButtons}>
                         <TouchableOpacity activeOpacity={0.8} onPress={Hide} style={styles.headerEyesContainer}>
@@ -102,40 +94,31 @@ export default function Page() {
                     </View>
                 </View>
 
-                <ScrollView nestedScrollEnabled={true} onScroll={handleScroll} contentContainerStyle={styles.content} style={styles.scrollView} refreshControl={<RefreshControl refreshing={refreshing} onRefresh={onRefresh} />}>
-                    <TouchableOpacity activeOpacity={0.8} onPress={() => router.push('/datos')} style={styles.view}>
-                        <View style={styles.indicators}>
-                            <View style={styles.indicator}>
-                                <Text style={styles.indicatorText}>Balance</Text>
-                            </View>
-                            <TouchableOpacity activeOpacity={0.8} onPress={Datos} style={styles.indicatorEyeContainer}>
-                                <Text style={styles.indicatorText}>Datos de la cuenta</Text>
-                                <ChevronRight size={20} strokeWidth={2} color={colors.light} />
+                <ScrollView nestedScrollEnabled={true} contentContainerStyle={styles.content} style={styles.scrollView} refreshControl={<RefreshControl refreshing={refreshing} onRefresh={onRefresh} />}>
+                    <View style={styles.view}>
+                        <View>
+                            <Text style={styles.viewText}>Balance</Text>
+                        </View>
+                        <Text style={styles.viewAmount}>{hide ? '****' : amount} USD</Text>
+                        <View style={styles.actions}>
+                            <TouchableOpacity style={[styles.action, {
+                                backgroundColor: colors.wiseGreen,
+                            }]}>
+                                <Plus size={20} strokeWidth={1.5} color={colors.pantanoText} />
+                                <Text style={styles.actionText}>Ingresar</Text>
+                            </TouchableOpacity>
+                            <TouchableOpacity style={styles.action}>
+                                <ArrowUp size={20} strokeWidth={1.5} color={colors.pantanoText} />
+                                <Text style={styles.actionText}>Enviar</Text>
+                            </TouchableOpacity>
+                            <TouchableOpacity style={styles.action}>
+                                <ArrowDown size={20} strokeWidth={1.5} color={colors.pantanoText} />
+                                <Text style={styles.actionText}>Recibir</Text>
                             </TouchableOpacity>
                         </View>
-                        <View style={styles.amountContainer}>
-                            <Text style={styles.amount}>$ {hide ? '****' : amount}</Text>
-                            <View style={styles.growthContainer}>
-                                <ArrowUp size={15} strokeWidth={2} color={colors.growthGreen} />
-                                <Text style={styles.growthText}>{growthPercentage}</Text>
-                                <Text style={styles.growthPercentage}>%</Text>
-                            </View>
-                        </View>
-                        <View style={styles.actions}>
-                            <View style={styles.actionContainer}>
-                                <TouchableOpacity activeOpacity={1} onPress={Ingresar} style={styles.action}>
-                                    <Text style={styles.actionText}>Ingresar</Text>
-                                </TouchableOpacity>
-                            </View>
-                            <View style={styles.actionContainer}>
-                                <TouchableOpacity activeOpacity={1} onPress={Retirar} style={styles.action}>
-                                    <Text style={styles.actionText}>Retirar</Text>
-                                </TouchableOpacity>
-                            </View>
-                        </View>
-                    </TouchableOpacity>
+                    </View>
 
-                    <View style={styles.actionButtons}>
+                    {/* <View style={styles.actionButtons}>
                         <TouchableOpacity activeOpacity={0.8} onPress={Qr} style={styles.actionButton}>
                             <ScanQrCode size={20} strokeWidth={2} color={colors.gray} />
                             <Text style={styles.actionButtonText}>Pagar con QR</Text>
@@ -166,19 +149,28 @@ export default function Page() {
                         </View>
                     </View>
 
+                    <ScrollView nestedScrollEnabled={true} style={styles.movementsScrollView} contentContainerStyle={styles.movementsContent}>
+                        <Text>Hola</Text>
+                        <Text>Hola</Text>
+                        <Text>Hola</Text>
+                        <Text>Hola</Text>
+                        <Text>Hola</Text>
+                        <Text>Hola</Text>
+                    </ScrollView>
+
                     <Carousel 
                         ref={carouselRef}
                         data={data}
                         onProgressChange={progress}
                         renderItem={({ item }) => (
                             <View style={styles.carouselItem}>
-                                <Text>Noticia {item}</Text>
+                                <Text>{item}</Text>
                             </View>
                         )}
                         width={Dimensions.get('window').width * 0.9}
                         autoPlay
                         autoPlayInterval={2000}
-                        height={Dimensions.get('window').height * 0.15}
+                        height={100}
                     />
 
                     <Pagination.Basic
@@ -188,7 +180,7 @@ export default function Page() {
                             borderRadius: 999,
                         }}
                         activeDotStyle={{
-                            backgroundColor: colors.violet,
+                            backgroundColor: colors.orange,
                             borderRadius: 999,
                         }}
                         containerStyle={{
@@ -197,7 +189,7 @@ export default function Page() {
                         }}
                         data={data}
                         onPress={onPressPagination}
-                    />
+                    /> */}
                 </ScrollView>
             </SafeAreaView>
         </>
@@ -210,12 +202,12 @@ const styles = StyleSheet.create({
         justifyContent: 'center',
         flexDirection: 'column',
         alignItems: 'center',
-        backgroundColor: colors.back,
+        backgroundColor: colors.white,
     },
     header: {
         width: '100%',
         display: 'flex',
-        height: '8%',
+        height: '9%',
         flexDirection: 'row',
         alignItems: 'flex-start',
         gap: 10,
@@ -236,10 +228,9 @@ const styles = StyleSheet.create({
         marginRight: 25,
     },
     title: {
-        fontSize: 22,
+        fontSize: 20,
         fontWeight: '500',
         color: colors.black,
-        fontFamily: 'Aalto',
         marginLeft: 25,
         marginTop: '3%',
     },
@@ -249,46 +240,45 @@ const styles = StyleSheet.create({
         width: '90%',
         alignItems: 'center',
         justifyContent: 'center',
-        gap: '10%',
-    },
-    actionContainer: {
-        display: 'flex',
-        flexDirection: 'column',
-        alignItems: 'center',
-        justifyContent: 'center',
-        gap: 5,
+        gap: '5%',
     },
     action: {
-        width: 130,
-        height: 50,
-        borderRadius: 12,
-        backgroundColor: colors.violet,
+        padding: 10,
+        paddingHorizontal: 12,
+        borderRadius: 9999,
+        backgroundColor: colors.buttonsGray,
         display: 'flex',
+        flexDirection: 'row',
+        gap: 5,
         justifyContent: 'center',
         alignItems: 'center',
     },
     actionText: {
-        fontSize: 18,
+        fontSize: 15,
         fontWeight: '500',
-        color: colors.white,
+        color: colors.pantanoText,
     },
     view: {
-        width: '90%',
-        borderRadius: 12,
-        justifyContent: 'center',
-        flexDirection: 'column',
-        backgroundColor: colors.white,
-        alignItems: 'center',
-        gap: '15%',
+        width: Dimensions.get('window').width - 50,
         height: '35%',
-        borderWidth: 1,
-        borderColor: colors.border,
+        borderRadius: 12,
+        flexDirection: 'column',
+        gap: '7%',
+    },
+    viewText: {
+        fontSize: 16,
+        fontWeight: '400',
+        color: colors.gray,
+    },
+    viewAmount: {
+        fontSize: 30,
+        fontWeight: 'bold',
+        color: colors.pantano,
     },
     scrollView: {
         flexGrow: 0,
         height: '100%',
         width: '100%',
-        backgroundColor: colors.back,
     },
     content: {
         alignContent: 'center',
@@ -300,7 +290,7 @@ const styles = StyleSheet.create({
         gap: '3%',
     },
     amount: {
-        fontSize: 30,
+        fontSize: 40,
         fontWeight: '600',
         color: colors.darkGray,
     },
@@ -429,7 +419,7 @@ const styles = StyleSheet.create({
     carouselItem: {
         width: '100%',
         height: '100%',
-        backgroundColor: colors.white,
+        backgroundColor: colors.red,
         borderRadius: 12,
         display: 'flex',
         justifyContent: 'center',

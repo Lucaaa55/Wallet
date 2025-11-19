@@ -7,29 +7,29 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0B152E756882B0C2855CDB52 /* PrivacyInfo.xcprivacy in Resources */ = {isa = PBXBuildFile; fileRef = 892D2C0C65D7B01225DA77F0 /* PrivacyInfo.xcprivacy */; };
 		13B07FBF1A68108700A75B9A /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 13B07FB51A68108700A75B9A /* Images.xcassets */; };
+		2315E2421E553E60BA780508 /* ExpoModulesProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFBB5649190FF4DB7AA0947D /* ExpoModulesProvider.swift */; };
 		3E461D99554A48A4959DE609 /* SplashScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AA286B85B6C04FC6940260E9 /* SplashScreen.storyboard */; };
-		504F70F98E1EB131E2C0A256 /* PrivacyInfo.xcprivacy in Resources */ = {isa = PBXBuildFile; fileRef = 630BA8E7EC4D28BB1EBBE0F7 /* PrivacyInfo.xcprivacy */; };
-		82D63E55A0AEC6D7C5239FDB /* libPods-BestBuy.a in Frameworks */ = {isa = PBXBuildFile; fileRef = B9BB62E176F1539210643EE4 /* libPods-BestBuy.a */; };
+		3FB850D0058850B5249FD6F3 /* libPods-Hoop.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 0C93F6AD612607B92FD0E39C /* libPods-Hoop.a */; };
 		BB2F792D24A3F905000567C9 /* Expo.plist in Resources */ = {isa = PBXBuildFile; fileRef = BB2F792C24A3F905000567C9 /* Expo.plist */; };
-		CC3CE43ECACD912CEDD42BB1 /* ExpoModulesProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B44BC6C59CC5C465317E6FC /* ExpoModulesProvider.swift */; };
 		F11748422D0307B40044C1D9 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F11748412D0307B40044C1D9 /* AppDelegate.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		13B07F961A680F5B00A75B9A /* BestBuy.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BestBuy.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		13B07FB51A68108700A75B9A /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Images.xcassets; path = BestBuy/Images.xcassets; sourceTree = "<group>"; };
-		13B07FB61A68108700A75B9A /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = Info.plist; path = BestBuy/Info.plist; sourceTree = "<group>"; };
-		630BA8E7EC4D28BB1EBBE0F7 /* PrivacyInfo.xcprivacy */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xml; name = PrivacyInfo.xcprivacy; path = BestBuy/PrivacyInfo.xcprivacy; sourceTree = "<group>"; };
-		6CE2D838EFBF25B4BBEBD087 /* Pods-BestBuy.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BestBuy.debug.xcconfig"; path = "Target Support Files/Pods-BestBuy/Pods-BestBuy.debug.xcconfig"; sourceTree = "<group>"; };
-		8B75715F18454245B7330EAC /* Pods-BestBuy.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BestBuy.release.xcconfig"; path = "Target Support Files/Pods-BestBuy/Pods-BestBuy.release.xcconfig"; sourceTree = "<group>"; };
-		9B44BC6C59CC5C465317E6FC /* ExpoModulesProvider.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ExpoModulesProvider.swift; path = "Pods/Target Support Files/Pods-BestBuy/ExpoModulesProvider.swift"; sourceTree = "<group>"; };
-		AA286B85B6C04FC6940260E9 /* SplashScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = SplashScreen.storyboard; path = BestBuy/SplashScreen.storyboard; sourceTree = "<group>"; };
-		B9BB62E176F1539210643EE4 /* libPods-BestBuy.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-BestBuy.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		0C93F6AD612607B92FD0E39C /* libPods-Hoop.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Hoop.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		13B07F961A680F5B00A75B9A /* Hoop.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Hoop.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		13B07FB51A68108700A75B9A /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Images.xcassets; path = Hoop/Images.xcassets; sourceTree = "<group>"; };
+		13B07FB61A68108700A75B9A /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = Info.plist; path = Hoop/Info.plist; sourceTree = "<group>"; };
+		17FA974F3805D84038E1CE3D /* Pods-Hoop.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Hoop.debug.xcconfig"; path = "Target Support Files/Pods-Hoop/Pods-Hoop.debug.xcconfig"; sourceTree = "<group>"; };
+		892D2C0C65D7B01225DA77F0 /* PrivacyInfo.xcprivacy */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xml; name = PrivacyInfo.xcprivacy; path = Hoop/PrivacyInfo.xcprivacy; sourceTree = "<group>"; };
+		AA286B85B6C04FC6940260E9 /* SplashScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = SplashScreen.storyboard; path = Hoop/SplashScreen.storyboard; sourceTree = "<group>"; };
 		BB2F792C24A3F905000567C9 /* Expo.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Expo.plist; sourceTree = "<group>"; };
 		ED297162215061F000B7C4FE /* JavaScriptCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = JavaScriptCore.framework; path = System/Library/Frameworks/JavaScriptCore.framework; sourceTree = SDKROOT; };
-		F11748412D0307B40044C1D9 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = AppDelegate.swift; path = BestBuy/AppDelegate.swift; sourceTree = "<group>"; };
-		F11748442D0722820044C1D9 /* BestBuy-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = "BestBuy-Bridging-Header.h"; path = "BestBuy/BestBuy-Bridging-Header.h"; sourceTree = "<group>"; };
+		EFBB5649190FF4DB7AA0947D /* ExpoModulesProvider.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ExpoModulesProvider.swift; path = "Pods/Target Support Files/Pods-Hoop/ExpoModulesProvider.swift"; sourceTree = "<group>"; };
+		F11748412D0307B40044C1D9 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = AppDelegate.swift; path = Hoop/AppDelegate.swift; sourceTree = "<group>"; };
+		F11748442D0722820044C1D9 /* Hoop-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = "Hoop-Bridging-Header.h"; path = "Hoop/Hoop-Bridging-Header.h"; sourceTree = "<group>"; };
+		F51D078006F2AD114D67013E /* Pods-Hoop.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Hoop.release.xcconfig"; path = "Target Support Files/Pods-Hoop/Pods-Hoop.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -37,31 +37,31 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				82D63E55A0AEC6D7C5239FDB /* libPods-BestBuy.a in Frameworks */,
+				3FB850D0058850B5249FD6F3 /* libPods-Hoop.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		13B07FAE1A68108700A75B9A /* BestBuy */ = {
+		13B07FAE1A68108700A75B9A /* Hoop */ = {
 			isa = PBXGroup;
 			children = (
 				F11748412D0307B40044C1D9 /* AppDelegate.swift */,
-				F11748442D0722820044C1D9 /* BestBuy-Bridging-Header.h */,
+				F11748442D0722820044C1D9 /* Hoop-Bridging-Header.h */,
 				BB2F792B24A3F905000567C9 /* Supporting */,
 				13B07FB51A68108700A75B9A /* Images.xcassets */,
 				13B07FB61A68108700A75B9A /* Info.plist */,
 				AA286B85B6C04FC6940260E9 /* SplashScreen.storyboard */,
-				630BA8E7EC4D28BB1EBBE0F7 /* PrivacyInfo.xcprivacy */,
+				892D2C0C65D7B01225DA77F0 /* PrivacyInfo.xcprivacy */,
 			);
-			name = BestBuy;
+			name = Hoop;
 			sourceTree = "<group>";
 		};
-		2884C2E7840CACEAB9C4F95E /* ExpoModulesProviders */ = {
+		2CF22189F3C7196DB9A577F5 /* ExpoModulesProviders */ = {
 			isa = PBXGroup;
 			children = (
-				7673641C8A55E96059BB89A9 /* BestBuy */,
+				C962D93B04B63DF51DB7EABC /* Hoop */,
 			);
 			name = ExpoModulesProviders;
 			sourceTree = "<group>";
@@ -70,26 +70,9 @@
 			isa = PBXGroup;
 			children = (
 				ED297162215061F000B7C4FE /* JavaScriptCore.framework */,
-				B9BB62E176F1539210643EE4 /* libPods-BestBuy.a */,
+				0C93F6AD612607B92FD0E39C /* libPods-Hoop.a */,
 			);
 			name = Frameworks;
-			sourceTree = "<group>";
-		};
-		620CE178C54B1F146E8E49FB /* Pods */ = {
-			isa = PBXGroup;
-			children = (
-				6CE2D838EFBF25B4BBEBD087 /* Pods-BestBuy.debug.xcconfig */,
-				8B75715F18454245B7330EAC /* Pods-BestBuy.release.xcconfig */,
-			);
-			path = Pods;
-			sourceTree = "<group>";
-		};
-		7673641C8A55E96059BB89A9 /* BestBuy */ = {
-			isa = PBXGroup;
-			children = (
-				9B44BC6C59CC5C465317E6FC /* ExpoModulesProvider.swift */,
-			);
-			name = BestBuy;
 			sourceTree = "<group>";
 		};
 		832341AE1AAA6A7D00B99B32 /* Libraries */ = {
@@ -102,12 +85,12 @@
 		83CBB9F61A601CBA00E9B192 = {
 			isa = PBXGroup;
 			children = (
-				13B07FAE1A68108700A75B9A /* BestBuy */,
+				13B07FAE1A68108700A75B9A /* Hoop */,
 				832341AE1AAA6A7D00B99B32 /* Libraries */,
 				83CBBA001A601CBA00E9B192 /* Products */,
 				2D16E6871FA4F8E400B85C8A /* Frameworks */,
-				620CE178C54B1F146E8E49FB /* Pods */,
-				2884C2E7840CACEAB9C4F95E /* ExpoModulesProviders */,
+				B6FD6162323E39F8BDCF236C /* Pods */,
+				2CF22189F3C7196DB9A577F5 /* ExpoModulesProviders */,
 			);
 			indentWidth = 2;
 			sourceTree = "<group>";
@@ -117,9 +100,18 @@
 		83CBBA001A601CBA00E9B192 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				13B07F961A680F5B00A75B9A /* BestBuy.app */,
+				13B07F961A680F5B00A75B9A /* Hoop.app */,
 			);
 			name = Products;
+			sourceTree = "<group>";
+		};
+		B6FD6162323E39F8BDCF236C /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				17FA974F3805D84038E1CE3D /* Pods-Hoop.debug.xcconfig */,
+				F51D078006F2AD114D67013E /* Pods-Hoop.release.xcconfig */,
+			);
+			path = Pods;
 			sourceTree = "<group>";
 		};
 		BB2F792B24A3F905000567C9 /* Supporting */ = {
@@ -128,32 +120,40 @@
 				BB2F792C24A3F905000567C9 /* Expo.plist */,
 			);
 			name = Supporting;
-			path = BestBuy/Supporting;
+			path = Hoop/Supporting;
+			sourceTree = "<group>";
+		};
+		C962D93B04B63DF51DB7EABC /* Hoop */ = {
+			isa = PBXGroup;
+			children = (
+				EFBB5649190FF4DB7AA0947D /* ExpoModulesProvider.swift */,
+			);
+			name = Hoop;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		13B07F861A680F5B00A75B9A /* BestBuy */ = {
+		13B07F861A680F5B00A75B9A /* Hoop */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 13B07F931A680F5B00A75B9A /* Build configuration list for PBXNativeTarget "BestBuy" */;
+			buildConfigurationList = 13B07F931A680F5B00A75B9A /* Build configuration list for PBXNativeTarget "Hoop" */;
 			buildPhases = (
 				08A4A3CD28434E44B6B9DE2E /* [CP] Check Pods Manifest.lock */,
-				741C83C90318CC4626186485 /* [Expo] Configure project */,
+				29FEDB6263547B27BD2CB339 /* [Expo] Configure project */,
 				13B07F871A680F5B00A75B9A /* Sources */,
 				13B07F8C1A680F5B00A75B9A /* Frameworks */,
 				13B07F8E1A680F5B00A75B9A /* Resources */,
 				00DD1BFF1BD5951E006B06BC /* Bundle React Native code and images */,
 				800E24972A6A228C8D4807E9 /* [CP] Copy Pods Resources */,
-				2314A0DE4555BCC686B07A88 /* [CP] Embed Pods Frameworks */,
+				FD20E19BB7FAECA1112D76E5 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
 			dependencies = (
 			);
-			name = BestBuy;
-			productName = BestBuy;
-			productReference = 13B07F961A680F5B00A75B9A /* BestBuy.app */;
+			name = Hoop;
+			productName = Hoop;
+			productReference = 13B07F961A680F5B00A75B9A /* Hoop.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -169,7 +169,7 @@
 					};
 				};
 			};
-			buildConfigurationList = 83CBB9FA1A601CBA00E9B192 /* Build configuration list for PBXProject "BestBuy" */;
+			buildConfigurationList = 83CBB9FA1A601CBA00E9B192 /* Build configuration list for PBXProject "Hoop" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -182,7 +182,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				13B07F861A680F5B00A75B9A /* BestBuy */,
+				13B07F861A680F5B00A75B9A /* Hoop */,
 			);
 		};
 /* End PBXProject section */
@@ -195,7 +195,7 @@
 				BB2F792D24A3F905000567C9 /* Expo.plist in Resources */,
 				13B07FBF1A68108700A75B9A /* Images.xcassets in Resources */,
 				3E461D99554A48A4959DE609 /* SplashScreen.storyboard in Resources */,
-				504F70F98E1EB131E2C0A256 /* PrivacyInfo.xcprivacy in Resources */,
+				0B152E756882B0C2855CDB52 /* PrivacyInfo.xcprivacy in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -234,38 +234,14 @@
 			outputFileListPaths = (
 			);
 			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-BestBuy-checkManifestLockResult.txt",
+				"$(DERIVED_FILE_DIR)/Pods-Hoop-checkManifestLockResult.txt",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
-		2314A0DE4555BCC686B07A88 /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-BestBuy/Pods-BestBuy-frameworks.sh",
-				"${PODS_XCFRAMEWORKS_BUILD_DIR}/JitsiWebRTC/WebRTC.framework/WebRTC",
-				"${PODS_XCFRAMEWORKS_BUILD_DIR}/React-Core-prebuilt/React.framework/React",
-				"${PODS_XCFRAMEWORKS_BUILD_DIR}/ReactNativeDependencies/ReactNativeDependencies.framework/ReactNativeDependencies",
-				"${PODS_XCFRAMEWORKS_BUILD_DIR}/hermes-engine/Pre-built/hermes.framework/hermes",
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputPaths = (
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/WebRTC.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/React.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ReactNativeDependencies.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/hermes.framework",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-BestBuy/Pods-BestBuy-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		741C83C90318CC4626186485 /* [Expo] Configure project */ = {
+		29FEDB6263547B27BD2CB339 /* [Expo] Configure project */ = {
 			isa = PBXShellScriptBuildPhase;
 			alwaysOutOfDate = 1;
 			buildActionMask = 2147483647;
@@ -276,18 +252,18 @@
 			inputPaths = (
 				"$(SRCROOT)/.xcode.env",
 				"$(SRCROOT)/.xcode.env.local",
-				"$(SRCROOT)/BestBuy/BestBuy.entitlements",
-				"$(SRCROOT)/Pods/Target Support Files/Pods-BestBuy/expo-configure-project.sh",
+				"$(SRCROOT)/Hoop/Hoop.entitlements",
+				"$(SRCROOT)/Pods/Target Support Files/Pods-Hoop/expo-configure-project.sh",
 			);
 			name = "[Expo] Configure project";
 			outputFileListPaths = (
 			);
 			outputPaths = (
-				"$(SRCROOT)/Pods/Target Support Files/Pods-BestBuy/ExpoModulesProvider.swift",
+				"$(SRCROOT)/Pods/Target Support Files/Pods-Hoop/ExpoModulesProvider.swift",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "# This script configures Expo modules and generates the modules provider file.\nbash -l -c \"./Pods/Target\\ Support\\ Files/Pods-BestBuy/expo-configure-project.sh\"\n";
+			shellScript = "# This script configures Expo modules and generates the modules provider file.\nbash -l -c \"./Pods/Target\\ Support\\ Files/Pods-Hoop/expo-configure-project.sh\"\n";
 		};
 		800E24972A6A228C8D4807E9 /* [CP] Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;
@@ -295,7 +271,7 @@
 			files = (
 			);
 			inputPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-BestBuy/Pods-BestBuy-resources.sh",
+				"${PODS_ROOT}/Target Support Files/Pods-Hoop/Pods-Hoop-resources.sh",
 				"${PODS_CONFIGURATION_BUILD_DIR}/EXConstants/EXConstants.bundle",
 				"${PODS_CONFIGURATION_BUILD_DIR}/EXConstants/ExpoConstants_privacy.bundle",
 				"${PODS_CONFIGURATION_BUILD_DIR}/EXUpdates/EXUpdates.bundle",
@@ -360,7 +336,31 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-BestBuy/Pods-BestBuy-resources.sh\"\n";
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Hoop/Pods-Hoop-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		FD20E19BB7FAECA1112D76E5 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Hoop/Pods-Hoop-frameworks.sh",
+				"${PODS_XCFRAMEWORKS_BUILD_DIR}/JitsiWebRTC/WebRTC.framework/WebRTC",
+				"${PODS_XCFRAMEWORKS_BUILD_DIR}/React-Core-prebuilt/React.framework/React",
+				"${PODS_XCFRAMEWORKS_BUILD_DIR}/ReactNativeDependencies/ReactNativeDependencies.framework/ReactNativeDependencies",
+				"${PODS_XCFRAMEWORKS_BUILD_DIR}/hermes-engine/Pre-built/hermes.framework/hermes",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/WebRTC.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/React.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ReactNativeDependencies.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/hermes.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Hoop/Pods-Hoop-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
@@ -371,7 +371,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				F11748422D0307B40044C1D9 /* AppDelegate.swift in Sources */,
-				CC3CE43ECACD912CEDD42BB1 /* ExpoModulesProvider.swift in Sources */,
+				2315E2421E553E60BA780508 /* ExpoModulesProvider.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -380,11 +380,11 @@
 /* Begin XCBuildConfiguration section */
 		13B07F941A680F5B00A75B9A /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 6CE2D838EFBF25B4BBEBD087 /* Pods-BestBuy.debug.xcconfig */;
+			baseConfigurationReference = 17FA974F3805D84038E1CE3D /* Pods-Hoop.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
-				CODE_SIGN_ENTITLEMENTS = BestBuy/BestBuy.entitlements;
+				CODE_SIGN_ENTITLEMENTS = Hoop/Hoop.entitlements;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = ZND6L6LQBX;
 				ENABLE_BITCODE = NO;
@@ -392,7 +392,7 @@
 					"$(inherited)",
 					"FB_SONARKIT_ENABLED=1",
 				);
-				INFOPLIST_FILE = BestBuy/Info.plist;
+				INFOPLIST_FILE = Hoop/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 15.1;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -405,9 +405,9 @@
 					"-lc++",
 				);
 				OTHER_SWIFT_FLAGS = "$(inherited) -D EXPO_CONFIGURATION_DEBUG";
-				PRODUCT_BUNDLE_IDENTIFIER = com.luca.bestbuy;
-				PRODUCT_NAME = BestBuy;
-				SWIFT_OBJC_BRIDGING_HEADER = "BestBuy/BestBuy-Bridging-Header.h";
+				PRODUCT_BUNDLE_IDENTIFIER = com.luca.hoop;
+				PRODUCT_NAME = Hoop;
+				SWIFT_OBJC_BRIDGING_HEADER = "Hoop/Hoop-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -417,14 +417,14 @@
 		};
 		13B07F951A680F5B00A75B9A /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 8B75715F18454245B7330EAC /* Pods-BestBuy.release.xcconfig */;
+			baseConfigurationReference = F51D078006F2AD114D67013E /* Pods-Hoop.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
-				CODE_SIGN_ENTITLEMENTS = BestBuy/BestBuy.entitlements;
+				CODE_SIGN_ENTITLEMENTS = Hoop/Hoop.entitlements;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = ZND6L6LQBX;
-				INFOPLIST_FILE = BestBuy/Info.plist;
+				INFOPLIST_FILE = Hoop/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 15.1;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -437,9 +437,9 @@
 					"-lc++",
 				);
 				OTHER_SWIFT_FLAGS = "$(inherited) -D EXPO_CONFIGURATION_RELEASE";
-				PRODUCT_BUNDLE_IDENTIFIER = com.luca.bestbuy;
-				PRODUCT_NAME = BestBuy;
-				SWIFT_OBJC_BRIDGING_HEADER = "BestBuy/BestBuy-Bridging-Header.h";
+				PRODUCT_BUNDLE_IDENTIFIER = com.luca.hoop;
+				PRODUCT_NAME = Hoop;
+				SWIFT_OBJC_BRIDGING_HEADER = "Hoop/Hoop-Bridging-Header.h";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VERSIONING_SYSTEM = "apple-generic";
@@ -567,7 +567,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		13B07F931A680F5B00A75B9A /* Build configuration list for PBXNativeTarget "BestBuy" */ = {
+		13B07F931A680F5B00A75B9A /* Build configuration list for PBXNativeTarget "Hoop" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				13B07F941A680F5B00A75B9A /* Debug */,
@@ -576,7 +576,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		83CBB9FA1A601CBA00E9B192 /* Build configuration list for PBXProject "BestBuy" */ = {
+		83CBB9FA1A601CBA00E9B192 /* Build configuration list for PBXProject "Hoop" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				83CBBA201A601CBA00E9B192 /* Debug */,

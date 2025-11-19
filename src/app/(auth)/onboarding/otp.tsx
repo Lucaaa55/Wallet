@@ -76,7 +76,7 @@ export default function Page() {
                         Haptics.impactAsync(Haptics.ImpactFeedbackStyle.Light)
                         router.push('(auth)/register')
                     }}>
-                        <ArrowLeft size={30} color={colors.blue} />
+                        <ArrowLeft size={30} color={colors.violet} />
                     </TouchableOpacity>
 
                     <View style={styles.headerTitle}>
@@ -98,7 +98,7 @@ export default function Page() {
                                 blurOnFilled={true}
                                 numberOfDigits={6} 
                                 onTextChange={(text) => setCode(text)} 
-                                focusColor={error ? colors.red : colors.blue}
+                                focusColor={error ? colors.red : colors.violet}
                                 type={'numeric'}
                                 theme={{
                                     containerStyle: styles.headerInputOtp,
@@ -110,7 +110,7 @@ export default function Page() {
                                 <Text style={styles.headerInputOtpTextText}>¿No recibiste el código?</Text>
                                 <TouchableOpacity onPress={Resend}>
                                     <Text style={[styles.headerInputOtpTextText, {
-                                        color: colors.blue,
+                                        color: colors.violet,
                                         textDecorationLine: 'underline',
                                         textDecorationStyle: 'solid',
                                         fontWeight: '600',
@@ -127,7 +127,7 @@ export default function Page() {
                     </TouchableOpacity>
 
                     <TouchableOpacity disabled={code.length === 6 ? false : true} activeOpacity={1} style={[styles.bottomButton, {
-                        backgroundColor: code.length === 6 ? colors.blue : colors.soft,
+                        backgroundColor: code.length === 6 ? colors.violet : colors.soft,
                     }]} onPress={Press}>
                         <Text style={[styles.bottomButtonText, {
                             color: code.length === 6 ? colors.white : colors.gray,
@@ -262,7 +262,7 @@ const styles = StyleSheet.create({
     openMailContainer: {},
     openMailText: {
         fontWeight: '600',
-        color: colors.blue,
+        color: colors.violet,
         textDecorationLine: 'underline',
         textDecorationStyle: 'solid',
     },

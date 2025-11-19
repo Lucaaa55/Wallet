@@ -5,7 +5,7 @@ import { Drawer } from 'expo-router/drawer'
 import { StyleSheet, Text, View } from 'react-native'
 import * as Haptics from 'expo-haptics'
 import Svg, { Path } from 'react-native-svg'
-import { Home, CreditCard, UserCircle, ReceiptText } from 'lucide-react-native'
+import { Home, CreditCard, UserCircle, ReceiptText, Scroll, ScrollText } from 'lucide-react-native'
 import UserInactivityProvider from '@/context/UserInactivityProvider'
 
 export default function Layout() {
@@ -15,10 +15,13 @@ export default function Layout() {
                 initialRouteName={'index'}
                 screenOptions={{
                     headerShown: false,
+                    tabBarStyle: {
+                        // borderTopWidth: 0,
+                    },
                     tabBarItemStyle: {
                         marginTop: '3%',
                     },
-                    tabBarActiveTintColor: colors.blue,
+                    tabBarActiveTintColor: colors.violet,
                     tabBarInactiveTintColor: colors.gray,
                 }}
             >
@@ -29,18 +32,18 @@ export default function Layout() {
                         <Home size={size} color={color} strokeWidth={1.5} />
                     ),
                 }} />
+                <Tabs.Screen name={'transactions'} options={{
+                    headerShown: false,
+                    tabBarLabel: 'Actividad',
+                    tabBarIcon: ({ color, size }) => (
+                        <ScrollText size={size} color={color} strokeWidth={1.5} />
+                    ),
+                }} />
                 <Tabs.Screen name={'cards'} options={{
                     headerShown: false,
                     tabBarLabel: 'Tarjetas',
                     tabBarIcon: ({ color, size }) => (
                         <CreditCard size={size} color={color} strokeWidth={1.5} />
-                    ),
-                }} />
-                <Tabs.Screen name={'facturas'} options={{
-                    headerShown: false,
-                    tabBarLabel: 'Facturas',
-                    tabBarIcon: ({ color, size }) => (
-                        <ReceiptText size={size} color={color} strokeWidth={1.5} />
                     ),
                 }} />
                 <Tabs.Screen name={'settings'} options={{
@@ -54,7 +57,13 @@ export default function Layout() {
                     headerShown: false,
                     tabBarItemStyle: {
                         display: 'none',
-                        },
+                    },
+                }} />
+                <Tabs.Screen name={'/datos'} options={{
+                    headerShown: false,
+                    tabBarItemStyle: {
+                        display: 'none',
+                    },
                 }} />
             </Tabs>
         </UserInactivityProvider>

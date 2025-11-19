@@ -1,4 +1,4 @@
-package com.bestbuy.app
+package com.hoop.app
 
 import android.app.Application
 import android.content.res.Configuration

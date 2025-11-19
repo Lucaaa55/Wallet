@@ -19,6 +19,7 @@ export default function Layout() {
         'Tiempos': require('../../public/fonts/Tiempos/Regular.ttf'),
         'Tailwind': require('../../public/fonts/Tailwind/Black.ttf'),
         'Aalto': require('../../public/fonts/Aalto/Medium.ttf'),
+        'NSemibold': require('../../public/fonts/Nova/Semibold.otf'),
     })
     
     if (!loaded) {

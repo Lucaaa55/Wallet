@@ -1,8 +1,8 @@
 {
   "expo": {
-    "name": "Best Buy",
-    "slug": "Best Buy",
-    "scheme": "com.bestbuy.app",
+    "name": "Hoop",
+    "slug": "Hoop",
+    "scheme": "com.hoop.app",
     "version": "1.0.0",
     "orientation": "portrait",
     "icon": "./assets/icon.png",
@@ -11,11 +11,11 @@
     "splash": {
       "image": "./assets/splash-icon.png",
       "resizeMode": "contain",
-      "backgroundColor": "#0146BE"
+      "backgroundColor": "#5F4FC8"
     },
     "ios": {
       "supportsTablet": true,
-      "bundleIdentifier": "com.bestbuy.app",
+      "bundleIdentifier": "com.hoop.app",
       "infoPlist": {
         "ITSAppUsesNonExemptEncryption": false,
         "LSApplicationQueriesSchemes": [
@@ -31,18 +31,20 @@
           "yandexmail",
           "fastmail",
           "protonmail"
-        ]
+        ],
+        "NSCameraUsageDescription": "$(PRODUCT_NAME) needs access to your Camera."
       }
     },
     "android": {
       "adaptiveIcon": {
         "foregroundImage": "./assets/adaptive-icon.png",
-        "backgroundColor": "#0146BE"
+        "backgroundColor": "#5F4FC8"
       },
-      "package": "com.bestbuy.app",
+      "package": "com.hoop.app",
       "permissions": [
         "android.permission.USE_BIOMETRIC",
-        "android.permission.USE_FINGERPRINT"
+        "android.permission.USE_FINGERPRINT",
+        "android.permission.CAMERA"
       ]
     },
     "web": {
@@ -60,7 +62,19 @@
         {
           "faceIDPermission": "Allow $(PRODUCT_NAME) to use Face ID."
         }
+      ],
+      [
+        "react-native-vision-camera",
+        {
+          "cameraPermissionText": "$(PRODUCT_NAME) needs access to your Camera."
+        }
       ]
-    ]
+    ],
+    "extra": {
+      "router": {},
+      "eas": {
+        "projectId": "4c16d70a-09e8-4164-a745-8daa9598264b"
+      }
+    }
   }
 }

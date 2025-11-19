@@ -4,7 +4,7 @@ import { colors } from '$/extra/colors'
 import { useRouter } from 'expo-router'
 import * as Haptics from 'expo-haptics'
 import { useNotes } from '@/hooks/useNotes'
-import { Delete, Plus, ScanFace, Search } from 'lucide-react-native'
+import { Delete, Fingerprint, Plus, ScanFace, Search } from 'lucide-react-native'
 import { Chat } from '@/types/include'
 import ContextMenu from 'react-native-context-menu-view'
 import { config } from '$/extra/config'
@@ -36,15 +36,15 @@ export default function Page() {
     const onFaceIDPress = () => {
         Haptics.impactAsync(Haptics.ImpactFeedbackStyle.Medium)
         LocalAuthentication.authenticateAsync({
-            promptMessage: 'Escanea tu cara para ingresar',
+            promptMessage: 'Ingresa tu huella digital para ingresar.',
         })
-        .then((result) => {
-            if (result.success) {
-                router.replace('(main)')
-            } else {
-                setTries(tries + 1)
-            }
-        })
+            .then((result) => {
+                if (result.success) {
+                    router.replace('(main)')
+                } else {
+                    setTries(tries + 1)
+                }
+            })
     }
 
     const onNumberPress = (number: number) => {
@@ -70,6 +70,8 @@ export default function Page() {
                         style={styles.image}
                     />
 
+                    <Text style={styles.title}>Ingresa tu PIN</Text>
+
                     <View style={styles.dotsContainer}>
                         {[...Array(6)].map((_, i) => (
                             <View
@@ -89,56 +91,60 @@ export default function Page() {
                             <Text style={styles.error}>Intentos restantes: {3 - tries}</Text>
                         )
                     } */}
+
+                    <Text style={styles.forgotPin}>Olvidé mi PIN</Text>
                 </View>
 
                 <View style={styles.keypad}>
                     <View style={styles.row}>
-                    {[1, 2, 3].map((num) => (
-                        <TouchableOpacity
-                        key={num}
-                        style={styles.key}
-                        onPress={() => onNumberPress(num)}
-                        >
-                        <Text style={styles.keyText}>{num}</Text>
-                        </TouchableOpacity>
-                    ))}
+                        {[1, 2, 3].map((num) => (
+                            <TouchableOpacity
+                                key={num}
+                                style={styles.key}
+                                onPress={() => onNumberPress(num)}
+                            >
+                                <Text style={styles.keyText}>{num}</Text>
+                            </TouchableOpacity>
+                        ))}
                     </View>
 
                     <View style={styles.row}>
-                    {[4, 5, 6].map((num) => (
-                        <TouchableOpacity
-                        key={num}
-                        style={styles.key}
-                        onPress={() => onNumberPress(num)}
-                        >
-                        <Text style={styles.keyText}>{num}</Text>
-                        </TouchableOpacity>
-                    ))}
+                        {[4, 5, 6].map((num) => (
+                            <TouchableOpacity
+                                key={num}
+                                style={styles.key}
+                                onPress={() => onNumberPress(num)}
+                            >
+                                <Text style={styles.keyText}>{num}</Text>
+                            </TouchableOpacity>
+                        ))}
                     </View>
 
                     <View style={styles.row}>
-                    {[7, 8, 9].map((num) => (
-                        <TouchableOpacity
-                        key={num}
-                        style={styles.key}
-                        onPress={() => onNumberPress(num)}
-                        >
-                        <Text style={styles.keyText}>{num}</Text>
-                        </TouchableOpacity>
-                    ))}
+                        {[7, 8, 9].map((num) => (
+                            <TouchableOpacity
+                                key={num}
+                                style={styles.key}
+                                onPress={() => onNumberPress(num)}
+                            >
+                                <Text style={styles.keyText}>{num}</Text>
+                            </TouchableOpacity>
+                        ))}
                     </View>
 
                     <View style={styles.row}>
                         <TouchableOpacity onPress={() => onFaceIDPress()} style={styles.key}>
-                            <ScanFace size={25} color={colors.black} />
+                            <Fingerprint strokeWidth={1.5} size={25} color={colors.black} />
                         </TouchableOpacity>
 
                         <TouchableOpacity style={styles.key} onPress={() => onNumberPress(0)}>
                             <Text style={styles.keyText}>0</Text>
                         </TouchableOpacity>
 
-                        <TouchableOpacity style={styles.key} onPress={onBackPress}>
-                            <Delete size={25} color={colors.black} />
+                        <TouchableOpacity style={[styles.key, {
+                            backgroundColor: 'transparent',
+                        }]} onPress={onBackPress}>
+                            <Delete strokeWidth={1.5} size={25} color={colors.black} />
                         </TouchableOpacity>
                     </View>
                 </View>
@@ -161,16 +167,28 @@ const styles = StyleSheet.create({
         fontWeight: '500',
         color: colors.red,
     },
+    forgotPin: {
+        fontSize: 17,
+        fontWeight: '600',
+        color: colors.violet,
+        textDecorationStyle: 'solid',
+        textDecorationLine: 'underline',
+    },
     top: {
         display: 'flex',
         flexDirection: 'column',
         alignItems: 'center',
-        gap: 15,
+        gap: 20,
+    },
+    title: {
+        fontSize: 22,
+        color: colors.darkGray,
+        fontWeight: '700',
     },
     dotsContainer: {
         flexDirection: 'row',
-        marginVertical: '15%',
-        gap: 20,
+        marginVertical: '10%',
+        gap: '4%',
     },
     dot: {
         width: 25,
@@ -183,7 +201,7 @@ const styles = StyleSheet.create({
         width: '90%',
     },
     dotFilled: {
-        backgroundColor: colors.blue,
+        backgroundColor: colors.violet,
     },
     dotEmpty: {
         backgroundColor: colors.soft,
@@ -194,6 +212,7 @@ const styles = StyleSheet.create({
         flexDirection: 'column',
         justifyContent: 'center',
         alignItems: 'center',
+        marginBottom: '10%',
     },
     key: {
         borderRadius: 4,
@@ -202,7 +221,7 @@ const styles = StyleSheet.create({
         justifyContent: 'center',
         alignItems: 'center',
         margin: '1.5%',
-        backgroundColor: colors.light,
+        backgroundColor: colors.soft + '70',
     },
     keyText: {
         fontSize: 25,
