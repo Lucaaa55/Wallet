@@ -59,7 +59,7 @@ export default function Layout() {
                         display: 'none',
                     },
                 }} />
-                <Tabs.Screen name={'/datos'} options={{
+                <Tabs.Screen name={'datos'} options={{
                     headerShown: false,
                     tabBarItemStyle: {
                         display: 'none',
