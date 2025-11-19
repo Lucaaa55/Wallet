@@ -53,18 +53,6 @@ export default function Layout() {
                         <UserCircle size={size} color={color} strokeWidth={1.5} />
                     ),
                 }} />
-                <Tabs.Screen name={'[transactionId]'} options={{
-                    headerShown: false,
-                    tabBarItemStyle: {
-                        display: 'none',
-                    },
-                }} />
-                <Tabs.Screen name={'datos'} options={{
-                    headerShown: false,
-                    tabBarItemStyle: {
-                        display: 'none',
-                    },
-                }} />
             </Tabs>
         </UserInactivityProvider>
     )

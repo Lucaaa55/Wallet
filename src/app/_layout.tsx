@@ -38,6 +38,7 @@ export default function Layout() {
         >
             <Tabs.Screen name={'(auth)'} options={{ headerShown: false }} />
             <Tabs.Screen name={'(main)'} options={{ headerShown: false }} />
+            <Tabs.Screen name={'(ext)'} options={{ headerShown: false }} />
             <Tabs.Screen name={'(modals)/overlay'} options={{ headerShown: false }} />
         </Tabs>
     )
