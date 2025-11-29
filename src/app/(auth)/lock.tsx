@@ -1,17 +1,14 @@
-import { Alert, Button, Dimensions, Image, NativeModules, RefreshControl, ScrollView, StatusBar, StyleSheet, Text, TextInput, TouchableOpacity, View } from 'react-native'
+import { StyleSheet, Text, TouchableOpacity, View } from 'react-native'
 import { useEffect, useRef, useState } from 'react'
 import { colors } from '$/extra/colors'
 import { useRouter } from 'expo-router'
 import * as Haptics from 'expo-haptics'
-import { useNotes } from '@/hooks/useNotes'
-import { Delete, Fingerprint, Plus, ScanFace, Search } from 'lucide-react-native'
-import { Chat } from '@/types/include'
-import ContextMenu from 'react-native-context-menu-view'
-import { config } from '$/extra/config'
+import { Delete, Fingerprint } from 'lucide-react-native'
 import { SafeAreaView } from 'react-native-safe-area-context'
 import { urls } from '@/constants/urls'
 import { SvgUri } from 'react-native-svg'
 import * as LocalAuthentication from 'expo-local-authentication'
+import { StatusBar } from 'expo-status-bar'
 
 export default function Page() {
     const router = useRouter()
@@ -59,7 +56,7 @@ export default function Page() {
 
     return (
         <>
-            <StatusBar barStyle={'default'} />
+            <StatusBar style={'auto'} />
 
             <SafeAreaView style={styles.container}>
                 <View />

@@ -24,6 +24,15 @@ export default function Layout() {
             <Stack.Screen name={'datos'} options={{
                 headerShown: false,
             }} />
+            <Stack.Screen name={'links'} options={{
+                headerShown: false,
+            }} />
+            <Stack.Screen name={'movements/ingresar'} options={{
+                headerShown: false,
+            }} />
+            <Stack.Screen name={'movements/retirar'} options={{
+                headerShown: false,
+            }} />
             <Stack.Screen name={'scan'} options={{
                 headerShown: false,
             }} />

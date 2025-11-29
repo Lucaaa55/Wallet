@@ -1,18 +1,15 @@
-import { Alert, Button, Dimensions, Image, Keyboard, Linking, NativeModules, RefreshControl, ScrollView, StatusBar, StyleSheet, Text, TextInput, TouchableOpacity, View } from 'react-native'
-import { useEffect, useRef, useState } from 'react'
+import { Keyboard, Linking, StyleSheet, Text, TouchableOpacity, View } from 'react-native'
+import { useEffect, useState } from 'react'
 import { colors } from '$/extra/colors'
 import { useLocalSearchParams, useRouter } from 'expo-router'
 import * as Haptics from 'expo-haptics'
-import { useNotes } from '@/hooks/useNotes'
-import { ArrowLeft, Plus, Search } from 'lucide-react-native'
-import { Chat } from '@/types/include'
-import ContextMenu from 'react-native-context-menu-view'
-import { config } from '$/extra/config'
+import { ArrowLeft } from 'lucide-react-native'
 import { SafeAreaView } from 'react-native-safe-area-context'
 import { OtpInput } from 'react-native-otp-entry'
 import ToastManager, { Toast } from 'toastify-react-native'
 import { getEmailClients } from 'react-native-email-link'
 import * as Clipboard from 'expo-clipboard'
+import { StatusBar } from 'expo-status-bar'
 
 const toastConfig = {
     success: (props: any) => (
@@ -68,7 +65,7 @@ export default function Page() {
 
     return (
         <>
-            <StatusBar barStyle={'default'} />
+            <StatusBar style={'auto'} />
 
             <SafeAreaView style={styles.container}>
                 <View style={styles.header}>

@@ -27,19 +27,17 @@ export default function Layout() {
     }
 
     return (
-        <Tabs
+        <Stack
             initialRouteName={'(auth)'}
             screenOptions={{
                 headerShown: false,
-                tabBarStyle: {
-                    display: 'none',
-                },
+                animation: 'none',
             }}
         >
-            <Tabs.Screen name={'(auth)'} options={{ headerShown: false }} />
-            <Tabs.Screen name={'(main)'} options={{ headerShown: false }} />
-            <Tabs.Screen name={'(ext)'} options={{ headerShown: false }} />
-            <Tabs.Screen name={'(modals)/overlay'} options={{ headerShown: false }} />
-        </Tabs>
+            <Stack.Screen name={'(auth)'} options={{ headerShown: false }} />
+            <Stack.Screen name={'(main)'} options={{ headerShown: false }} />
+            <Stack.Screen name={'(ext)'} options={{ headerShown: false }} />
+            <Stack.Screen name={'(modals)/overlay'} options={{ headerShown: false }} />
+        </Stack>
     )
 }

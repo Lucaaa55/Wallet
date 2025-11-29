@@ -11,7 +11,7 @@
     "splash": {
       "image": "./assets/splash-icon.png",
       "resizeMode": "contain",
-      "backgroundColor": "#5F4FC8"
+      "backgroundColor": "#F4763B"
     },
     "ios": {
       "supportsTablet": true,
@@ -38,7 +38,7 @@
     "android": {
       "adaptiveIcon": {
         "foregroundImage": "./assets/adaptive-icon.png",
-        "backgroundColor": "#5F4FC8"
+        "backgroundColor": "#F4763B"
       },
       "package": "com.hoop.app",
       "permissions": [

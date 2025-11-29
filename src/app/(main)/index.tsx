@@ -1,17 +1,15 @@
 import { useEffect, useRef, useState } from 'react'
-import { ActivityIndicator, Alert, Button, Dimensions, Image, NativeModules, NativeScrollEvent, NativeSyntheticEvent, RefreshControl, ScrollView, StatusBar, StyleSheet, Text, TextInput, TouchableOpacity, View } from 'react-native'
+import { Dimensions, NativeScrollEvent, NativeSyntheticEvent, RefreshControl, ScrollView, StyleSheet, Text, TouchableOpacity, View } from 'react-native'
 import { colors } from '$/extra/colors'
 import { useRouter } from 'expo-router'
 import * as Haptics from 'expo-haptics'
-import { useNotes } from '@/hooks/useNotes'
-import { ArrowDownLeft, ArrowUp, ArrowUpRight, BanknoteArrowDown, ChevronRight, Eye, EyeOff, Landmark, Link, MoveRight, Plus, QrCode, Scan, ScanQrCode, Search } from 'lucide-react-native'
-import { Chat } from '@/types/include'
-import ContextMenu from 'react-native-context-menu-view'
-import { config } from '$/extra/config'
+import { ArrowUp, ChevronRight, Eye, EyeOff, Link, Scan, ScanQrCode } from 'lucide-react-native'
 import { SafeAreaView } from 'react-native-safe-area-context'
-import Flag from 'react-native-country-flag'
 import Carousel, { ICarouselInstance, Pagination } from 'react-native-reanimated-carousel'
 import { useSharedValue } from 'react-native-reanimated'
+import { StatusBar } from 'expo-status-bar'
+import { events } from '$/extra/events'
+import { movements } from '$/extra/movements'
 
 const data = [...new Array(3).keys()]
 
@@ -57,34 +55,13 @@ export default function Page() {
         setHide(!hide)
     }
 
-    const Datos = () => {
-        Haptics.selectionAsync()
-        router.push('/(ext)/datos')
-    }
-
-    const Links = () => {
-        Haptics.impactAsync(Haptics.ImpactFeedbackStyle.Light)
-    }
-
-    const Qr = () => {
-        Haptics.impactAsync(Haptics.ImpactFeedbackStyle.Light)
-    }
-
-    const Ingresar = () => {
-        Haptics.impactAsync(Haptics.ImpactFeedbackStyle.Medium)
-    }
-
-    const Retirar = () => {
-        Haptics.impactAsync(Haptics.ImpactFeedbackStyle.Medium)
-    }
-
     const handleScroll = (event: NativeSyntheticEvent<NativeScrollEvent>) => {
         setScrollY(event.nativeEvent.contentOffset.y)
     }
 
     return (
         <>
-            <StatusBar barStyle={'default'} />
+            <StatusBar style={'auto'} />
 
             <SafeAreaView style={styles.container}>
                 <View style={[styles.header, {
@@ -93,7 +70,7 @@ export default function Page() {
                 }]}>
                     <Text style={styles.title}>Hola, {'Luca'}!</Text>
                     <View style={styles.headerButtons}>
-                        <TouchableOpacity activeOpacity={0.8} onPress={Hide} style={styles.headerEyesContainer}>
+                        <TouchableOpacity activeOpacity={0.8} onPress={events.Scan} style={styles.headerEyesContainer}>
                             <Scan size={20} strokeWidth={2} color={colors.black} />
                         </TouchableOpacity>
                         <TouchableOpacity activeOpacity={0.8} onPress={Hide} style={styles.headerEyesContainer}>
@@ -102,13 +79,13 @@ export default function Page() {
                     </View>
                 </View>
 
-                <ScrollView nestedScrollEnabled={true} onScroll={handleScroll} contentContainerStyle={styles.content} style={styles.scrollView} refreshControl={<RefreshControl refreshing={refreshing} onRefresh={onRefresh} />}>
-                    <TouchableOpacity activeOpacity={0.8} onPress={() => router.push('/datos')} style={styles.view}>
+                <ScrollView onScroll={handleScroll} style={styles.scrollView} refreshControl={<RefreshControl refreshing={refreshing} onRefresh={onRefresh} />}>
+                    <TouchableOpacity activeOpacity={0.8} onPress={events.Datos} style={styles.view}>
                         <View style={styles.indicators}>
                             <View style={styles.indicator}>
                                 <Text style={styles.indicatorText}>Balance</Text>
                             </View>
-                            <TouchableOpacity activeOpacity={0.8} onPress={Datos} style={styles.indicatorEyeContainer}>
+                            <TouchableOpacity activeOpacity={0.8} onPress={events.Datos} style={styles.indicatorEyeContainer}>
                                 <Text style={styles.indicatorText}>Datos de la cuenta</Text>
                                 <ChevronRight size={20} strokeWidth={2} color={colors.light} />
                             </TouchableOpacity>
@@ -123,12 +100,12 @@ export default function Page() {
                         </View>
                         <View style={styles.actions}>
                             <View style={styles.actionContainer}>
-                                <TouchableOpacity activeOpacity={1} onPress={Ingresar} style={styles.action}>
+                                <TouchableOpacity activeOpacity={1} onPress={events.Ingresar} style={styles.action}>
                                     <Text style={styles.actionText}>Ingresar</Text>
                                 </TouchableOpacity>
                             </View>
                             <View style={styles.actionContainer}>
-                                <TouchableOpacity activeOpacity={1} onPress={Retirar} style={styles.action}>
+                                <TouchableOpacity activeOpacity={1} onPress={events.Retirar} style={styles.action}>
                                     <Text style={styles.actionText}>Retirar</Text>
                                 </TouchableOpacity>
                             </View>
@@ -136,11 +113,11 @@ export default function Page() {
                     </TouchableOpacity>
 
                     <View style={styles.actionButtons}>
-                        <TouchableOpacity activeOpacity={0.8} onPress={Qr} style={styles.actionButton}>
+                        <TouchableOpacity activeOpacity={0.8} onPress={events.Scan} style={styles.actionButton}>
                             <ScanQrCode size={20} strokeWidth={2} color={colors.gray} />
                             <Text style={styles.actionButtonText}>Pagar con QR</Text>
                         </TouchableOpacity>
-                        <TouchableOpacity activeOpacity={0.8} onPress={Links} style={styles.actionButton}>
+                        <TouchableOpacity activeOpacity={0.8} onPress={events.Links} style={styles.actionButton}>
                             <Link size={20} strokeWidth={2} color={colors.gray} />
                             <Text style={styles.actionButtonText}>Links de pago</Text>
                         </TouchableOpacity>
@@ -166,38 +143,16 @@ export default function Page() {
                         </View>
                     </View>
 
-                    <Carousel 
-                        ref={carouselRef}
-                        data={data}
-                        onProgressChange={progress}
-                        renderItem={({ item }) => (
-                            <View style={styles.carouselItem}>
-                                <Text>Noticia {item}</Text>
+                    <ScrollView nestedScrollEnabled={true} style={styles.movementsScrollView} refreshControl={<RefreshControl refreshing={refreshing} onRefresh={onRefresh} />}>
+                        <Text style={styles.movementsText}>Movimientos</Text>
+                                                                            
+                        {movements.map((movement, index) => (
+                            <View key={index} style={styles.movementsItem}>
+                                <Text style={styles.movementsItemText}>{movement.store}</Text>
+                                <Text style={styles.movementsItemAmount}>{movement.amount}</Text>
                             </View>
-                        )}
-                        width={Dimensions.get('window').width * 0.9}
-                        autoPlay
-                        autoPlayInterval={2000}
-                        height={Dimensions.get('window').height * 0.15}
-                    />
-
-                    <Pagination.Basic
-                        progress={progress}
-                        dotStyle={{
-                            backgroundColor: colors.soft,
-                            borderRadius: 999,
-                        }}
-                        activeDotStyle={{
-                            backgroundColor: colors.violet,
-                            borderRadius: 999,
-                        }}
-                        containerStyle={{
-                            gap: 10,
-                            marginTop: 10,
-                        }}
-                        data={data}
-                        onPress={onPressPagination}
-                    />
+                        ))}
+                    </ScrollView>
                 </ScrollView>
             </SafeAreaView>
         </>
@@ -206,10 +161,7 @@ export default function Page() {
 
 const styles = StyleSheet.create({
     container: {
-        display: 'flex',
-        justifyContent: 'center',
-        flexDirection: 'column',
-        alignItems: 'center',
+        flex: 1,
         backgroundColor: colors.back,
     },
     header: {
@@ -262,7 +214,7 @@ const styles = StyleSheet.create({
         width: 130,
         height: 50,
         borderRadius: 12,
-        backgroundColor: colors.violet,
+        backgroundColor: colors.violeta,
         display: 'flex',
         justifyContent: 'center',
         alignItems: 'center',
@@ -273,31 +225,19 @@ const styles = StyleSheet.create({
         color: colors.white,
     },
     view: {
-        width: '90%',
         borderRadius: 12,
         justifyContent: 'center',
         flexDirection: 'column',
         backgroundColor: colors.white,
         alignItems: 'center',
         gap: '15%',
-        height: '35%',
+        padding: '3%',
+        marginHorizontal: '5%',
         borderWidth: 1,
         borderColor: colors.border,
     },
     scrollView: {
-        flexGrow: 0,
-        height: '100%',
-        width: '100%',
-        backgroundColor: colors.back,
-    },
-    content: {
-        alignContent: 'center',
-        alignItems: 'center',
-        justifyContent: 'flex-start',
-        display: 'flex',
-        flexDirection: 'column',
         flex: 1,
-        gap: '3%',
     },
     amount: {
         fontSize: 30,
@@ -305,7 +245,8 @@ const styles = StyleSheet.create({
         color: colors.darkGray,
     },
     cotis: {
-        width: '90%',
+        padding: '3%',
+        marginHorizontal: '5%',
         gap: '5%',
         backgroundColor: colors.white,
         borderWidth: 1,
@@ -350,11 +291,12 @@ const styles = StyleSheet.create({
         color: colors.black,
     },
     actionButtons: {
+        marginHorizontal: '5%',
         display: 'flex',
         flexDirection: 'row',
         alignItems: 'center',
         justifyContent: 'space-between',
-        width: '90%',
+        padding: '5%',
     },
     actionButton: {
         width: '47.5%',
@@ -441,21 +383,14 @@ const styles = StyleSheet.create({
         height: 20,
     },
     movementsScrollView: {
-        flexGrow: 0,
-        height: Dimensions.get('window').height * 0.2,
-        width: '90%',
+        flexDirection: 'column',
+        padding: '3%',
+        marginHorizontal: '5%',
+        gap: '3%',
         backgroundColor: colors.white,
+        flex: 1,
         borderWidth: 1,
         borderColor: colors.border,
         borderRadius: 12,
-    },
-    movementsContent: {
-        alignContent: 'center',
-        alignItems: 'center',
-        display: 'flex',
-        flexDirection: 'column',
-        flex: 1,
-        gap: '3%',
-
     },
 })

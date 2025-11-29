@@ -1,16 +1,11 @@
-import { Alert, Button, Dimensions, Image, NativeModules, Pressable, RefreshControl, ScrollView, StatusBar, StyleSheet, Text, TextInput, TouchableOpacity, View } from 'react-native'
-import { useEffect, useRef, useState } from 'react'
+import { StyleSheet, Text, TouchableOpacity } from 'react-native'
+import { useEffect } from 'react'
 import { colors } from '$/extra/colors'
 import { useRouter } from 'expo-router'
 import * as Haptics from 'expo-haptics'
-import { useNotes } from '@/hooks/useNotes'
-import { Plus, Search } from 'lucide-react-native'
-import { Chat } from '@/types/include'
-import ContextMenu from 'react-native-context-menu-view'
-import { config } from '$/extra/config'
 import Animated, { useAnimatedStyle, useSharedValue, withSpring, withTiming } from 'react-native-reanimated'
 import { SafeAreaView } from 'react-native-safe-area-context'
-import Svg, { Path } from 'react-native-svg'
+import { StatusBar } from 'expo-status-bar'
 
 export default function Page() {
     const router = useRouter()
@@ -44,7 +39,7 @@ export default function Page() {
 
     return (
         <>
-            <StatusBar barStyle={'light-content'} />
+            <StatusBar style={'auto'} />
 
             <SafeAreaView style={styles.container}>
 
