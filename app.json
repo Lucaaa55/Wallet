@@ -1,8 +1,8 @@
 {
   "expo": {
-    "name": "Hoop",
-    "slug": "Hoop",
-    "scheme": "com.hoop.app",
+    "name": "Toast",
+    "slug": "Toast",
+    "scheme": "com.toast.app",
     "version": "1.0.0",
     "orientation": "portrait",
     "icon": "./assets/icon.png",
@@ -11,11 +11,11 @@
     "splash": {
       "image": "./assets/splash-icon.png",
       "resizeMode": "contain",
-      "backgroundColor": "#F4763B"
+      "backgroundColor": "#5F4FC8"
     },
     "ios": {
       "supportsTablet": true,
-      "bundleIdentifier": "com.hoop.app",
+      "bundleIdentifier": "com.luca.toast",
       "infoPlist": {
         "ITSAppUsesNonExemptEncryption": false,
         "LSApplicationQueriesSchemes": [
@@ -38,9 +38,9 @@
     "android": {
       "adaptiveIcon": {
         "foregroundImage": "./assets/adaptive-icon.png",
-        "backgroundColor": "#F4763B"
+        "backgroundColor": "#5F4FC8"
       },
-      "package": "com.hoop.app",
+      "package": "com.luca.toast",
       "permissions": [
         "android.permission.USE_BIOMETRIC",
         "android.permission.USE_FINGERPRINT",

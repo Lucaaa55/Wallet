@@ -15,7 +15,7 @@ export const colors = {
     darkGray: '#343434',
     sectionTitle: '#6b7280',
     light: '#DADADA',
-    violet: '#F4763B',
+    violet: '#7c3aed',
     back: '#F5F5F5',
     violetLight: '#F2EAFF',
     border: '#E8EAEB',

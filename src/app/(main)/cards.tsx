@@ -26,7 +26,7 @@ export default function Page() {
         <>
             <StatusBar style={'auto'} />
 
-            <SafeAreaView style={styles.container}>
+            <SafeAreaView edges={['left', 'right', 'top']} style={styles.container}>
                 <ScrollView style={styles.scrollView} contentContainerStyle={styles.content} showsVerticalScrollIndicator={false}>
                     <Text style={styles.title}>Tarjetas</Text>
 

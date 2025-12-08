@@ -18,8 +18,8 @@ export default function Page() {
         <>
             <StatusBar style={'auto'} />
 
-            <SafeAreaView style={styles.container}>
-                <ScrollView showsVerticalScrollIndicator={false} style={styles.scrollView} contentContainerStyle={styles.content}>
+            <SafeAreaView edges={['left', 'right', 'top']} style={styles.container}>
+                <ScrollView showsVerticalScrollIndicator={false} style={styles.scrollView}>
                     <View style={styles.header}>
                         <Text style={styles.name}>Luca Pignataro</Text>
                         <View style={styles.usernameContainer}>
@@ -60,10 +60,7 @@ const styles = StyleSheet.create({
         backgroundColor: colors.back,
     },
     scrollView: {
-        flex: 1,
-    },
-    content: {
-        paddingBottom: 25,
+        // flex: 1,
     },
     header: {
         padding: '7%',
@@ -90,7 +87,7 @@ const styles = StyleSheet.create({
         padding: 4,
     },
     menu: {
-        marginTop: 24,
+        marginTop: '5%',
         paddingHorizontal: '2.5%',
         marginHorizontal: '5%',
         backgroundColor: colors.white,
@@ -102,16 +99,16 @@ const styles = StyleSheet.create({
         fontSize: 16,
         fontWeight: '500',
         color: colors.sectionTitle,
-        marginBottom: 12,
-        marginTop: 22,
-        marginLeft: 16,
+        marginBottom: '3%',
+        marginTop: '7%',
+        marginLeft: '5%',
     },
     card: {},
     menuItem: {
         flexDirection: 'row',
         alignItems: 'center',
         justifyContent: 'space-between',
-        padding: 16,
+        padding: '5%',
     },
     menuItemLeft: {
         flexDirection: 'row',
