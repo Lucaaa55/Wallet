@@ -9,6 +9,7 @@ import { tarjetas } from '$/extra/tarjetas'
 import { LinearGradient as LinearGradientComponent } from 'expo-linear-gradient'
 import { VisaIcon } from '@/components/VisaIcon'
 import { StatusBar } from 'expo-status-bar'
+import FontAwesome5 from '@expo/vector-icons/FontAwesome5'
 
 export default function Page() {
     const router = useRouter()
@@ -39,9 +40,9 @@ export default function Page() {
                                 </View>
 
                                 <Pressable onPress={() => Press(tarjeta.id)}>
-                                    <LinearGradientComponent colors={[colors.violeta, colors.black]} style={styles.cardContainer}>
+                                    <LinearGradientComponent colors={[colors.yellow, colors.yellowLight]} start={{ x: 0, y: 0 }} end={{ x: 1, y: 0 }} style={styles.cardContainer}>
                                         <View style={styles.top}>
-                                            <Text style={styles.cardBank}>HOOP</Text>
+                                            <Text style={styles.cardBank}>Mantecard</Text>
                                             <ChevronRight size={30} color={colors.white} strokeWidth={1.5} />
                                         </View>
                                         <View style={styles.bottom}>
@@ -50,7 +51,7 @@ export default function Page() {
                                                 <Text style={styles.digits}>•••• {tarjeta.number.slice(-4)}</Text>
                                             </View>
 
-                                            <VisaIcon />
+                                            <FontAwesome5 name={'cc-visa'} size={24} color={colors.white} />
                                         </View>
                                     </LinearGradientComponent>
                                 </Pressable>

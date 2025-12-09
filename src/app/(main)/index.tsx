@@ -13,6 +13,7 @@ import { movements } from '$/extra/movements'
 import Swiper from 'react-native-swiper'
 import { SvgUri } from 'react-native-svg'
 import { promociones } from '$/extra/promociones'
+import { actions } from '$/extra/actions'
 
 const data = [...new Array(3).keys()]
 
@@ -32,7 +33,7 @@ export default function Page() {
     const [hide, setHide] = useState(false)
     const [amount, setAmount] = useState('3.120,01')
     const [scrollY, setScrollY] = useState(0)
-    const [growthPercentage, setGrowthPercentage] = useState('29,8')
+    const [growthPercentage, setGrowthPercentage] = useState('2,8')
     const [cotis, setCotis] = useState({
         compra: '1.480,00',
         venta: '1.420,00',
@@ -66,7 +67,7 @@ export default function Page() {
         <>
             <StatusBar style={'auto'} />
 
-            <SafeAreaView edges={['left', 'right', 'top']} style={styles.container}>
+            <SafeAreaView edges={['left', 'right', 'top', 'bottom']} style={styles.container}>
                 <View style={[styles.header, {
                     borderBottomColor: colors.border,
                     borderBottomWidth: scrollY > 0 ? 1 : 0,
@@ -85,7 +86,7 @@ export default function Page() {
                 <ScrollView onScroll={handleScroll} style={styles.scrollView} refreshControl={<RefreshControl refreshing={refreshing} onRefresh={onRefresh} />}>
                     <TouchableOpacity activeOpacity={0.8} onPress={events.Datos} style={styles.view}>
                         <View style={styles.topContainer}>
-                            <SvgUri uri={'https://hatscripts.github.io/circle-flags/flags/us.svg'} width={35} height={35} />
+                            <SvgUri uri={'https://hatscripts.github.io/circle-flags/flags/eu.svg'} width={35} height={35} />
                             <View style={styles.dataContainer}>
                                 <Text style={styles.dateText}>Datos de la cuenta</Text>
                                 <ChevronRight size={20} strokeWidth={2} color={colors.light} />
@@ -101,47 +102,15 @@ export default function Page() {
                                 <Text style={styles.growthText}>{growthPercentage} %</Text>
                             </View>
                         </View>
-                    </TouchableOpacity>
 
-                    <View style={styles.actionsButtons}>
-                        <TouchableOpacity activeOpacity={0.8} onPress={events.Ingresar} style={styles.actionButton}>
-                            <Plus size={25} strokeWidth={2} color={colors.violet} />
-                        </TouchableOpacity>
-                        <TouchableOpacity activeOpacity={0.8} onPress={events.Retirar} style={styles.actionButton}>
-                            <Minus size={25} strokeWidth={2} color={colors.violet} />
-                        </TouchableOpacity>
-                    </View>
-
-                    {/* <Swiper
-                        loop={true}
-                        autoplay={true}
-                        autoplayTimeout={3000}
-                        showsButtons={false}
-                        showsPagination={true}
-                        height={100}
-                        style={styles.swiper}
-                    >
-                        {promociones.map((promocion, index) => (
-                            <View key={index} style={styles.swiperItem}>
-                                <Image source={{ uri: promocion.image }} style={styles.swiperImage} resizeMethod={'none'} resizeMode={'cover'} width={300} height={100} />
-                            </View>
-                        ))}
-                    </Swiper> */}
-
-                    <View style={styles.movementsContainer}>
-                        <Text style={styles.movementsText}>Movimientos</Text>
-                        <ScrollView nestedScrollEnabled={true} style={styles.movementsItems}>
-                            {movements.map((movement, index) => (
-                                <View key={index} style={styles.movementsItem}>
-                                    <View style={styles.movementsItemIcon}>
-                                        <CircleDollarSign size={20} strokeWidth={2} color={colors.violet} />
-                                    </View>
-                                    <Text style={styles.movementsItemText}>{movement.store}</Text>
-                                    <Text style={styles.movementsItemAmount}>{movement.amount}</Text>
-                                </View>
+                        <View style={styles.actionsButtons}>
+                            {actions.map((button, index) => (
+                                <TouchableOpacity key={index} activeOpacity={0.8} onPress={button.onPress} style={styles.actionButton}>
+                                    <button.icon size={25} strokeWidth={2} color={colors.yellow} />
+                                </TouchableOpacity>
                             ))}
-                        </ScrollView>
-                    </View>
+                        </View>
+                    </TouchableOpacity>
                 </ScrollView>
             </SafeAreaView>
         </>
@@ -198,7 +167,7 @@ const styles = StyleSheet.create({
         flexDirection: 'column',
         backgroundColor: colors.white,
         alignItems: 'center',
-        gap: '5%',
+        gap: '15%',
         paddingVertical: '7%',
         padding: '3%',
         marginHorizontal: '5%',
@@ -248,10 +217,10 @@ const styles = StyleSheet.create({
         flexDirection: 'row',
         alignItems: 'center',
         justifyContent: 'center',
-        // backgroundColor: colors.lightGreen,
-        // borderRadius: 9999,
-        // paddingHorizontal: '2%',
-        // paddingVertical: '1%',
+        backgroundColor: colors.lightGreen,
+        borderRadius: 9999,
+        paddingHorizontal: '2%',
+        paddingVertical: '1%',
     },
     growthText: {
         fontSize: 15,
@@ -263,16 +232,16 @@ const styles = StyleSheet.create({
         alignItems: 'center',
         justifyContent: 'space-between',
         gap: '10%',
-        padding: '5%',
-        marginHorizontal: '5%',
+        padding: '2%',
+        width: '90%',
     },
     actionButton: {
         alignItems: 'center',
         justifyContent: 'center',
-        width: '40%',
-        aspectRatio: 2.1,
-        backgroundColor: colors.violet + '15',
-        borderRadius: 12,
+        width: '23%',
+        aspectRatio: 1,
+        backgroundColor: colors.yellow + '25',
+        borderRadius: 999,
     },
     movementsContainer: {
         display: 'flex',

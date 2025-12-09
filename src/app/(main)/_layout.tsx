@@ -5,7 +5,7 @@ import { Drawer } from 'expo-router/drawer'
 import { Platform, StyleSheet, Text, View } from 'react-native'
 import * as Haptics from 'expo-haptics'
 import Svg, { Path } from 'react-native-svg'
-import { Home, CreditCard, UserCircle, ReceiptText, Scroll, ScrollText } from 'lucide-react-native'
+import { CreditCard, UserCircle, House } from 'lucide-react-native'
 import UserInactivityProvider from '@/context/UserInactivityProvider'
 import { TabBar } from '@/components/TabBar'
 
@@ -22,13 +22,20 @@ export default function Layout() {
                 <Tabs.Screen name={'index'} options={{
                     headerShown: false,
                     tabBarLabel: 'Home',
-                }} />
-                <Tabs.Screen name={'scan'} options={{
-                    headerShown: false,
+                }} initialParams={{
+                    icon: 'House',
                 }} />
                 <Tabs.Screen name={'cards'} options={{
                     headerShown: false,
                     tabBarLabel: 'Tarjetas',
+                }} initialParams={{
+                    icon: 'CreditCard',
+                }} />
+                <Tabs.Screen name={'settings'} options={{
+                    headerShown: false,
+                    tabBarLabel: 'Cuenta',
+                }} initialParams={{
+                    icon: 'CircleUserRound',
                 }} />
             </Tabs>
         </UserInactivityProvider>

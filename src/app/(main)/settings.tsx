@@ -2,13 +2,31 @@ import { ScrollView, StyleSheet, Text, TouchableOpacity, View } from 'react-nati
 import { useEffect } from 'react'
 import { colors } from '$/extra/colors'
 import { useRouter } from 'expo-router'
-import { ChevronRight, Clipboard } from 'lucide-react-native'
+import { ChevronRight, Clipboard as ClipboardIcon } from 'lucide-react-native'
 import { SafeAreaView } from 'react-native-safe-area-context'
 import { menuItems } from '$/extra/menu'
 import { StatusBar } from 'expo-status-bar'
+import * as Haptics from 'expo-haptics'
+import * as Clipboard from 'expo-clipboard'
+import ToastManager, { Toast } from 'toastify-react-native'
+
+const toastConfig = {
+    success: (props: any) => (
+        <View style={{ backgroundColor: '#4CAF50', padding: 16, borderRadius: 10, marginTop: 20 }}>
+            <Text style={{ color: 'white', fontWeight: 'bold' }}>{props.text1}</Text>
+            {props.text2 && <Text style={{ color: 'white' }}>{props.text2}</Text>}
+        </View>
+    ),
+}
 
 export default function Page() {
     const router = useRouter()
+
+    const Copy = () => {
+        Haptics.impactAsync(Haptics.ImpactFeedbackStyle.Medium)
+        Clipboard.setStringAsync('@Cuentalucarda')
+        Toast.success('Copiado')
+    }
 
     useEffect(() => {
 
@@ -18,14 +36,14 @@ export default function Page() {
         <>
             <StatusBar style={'auto'} />
 
-            <SafeAreaView edges={['left', 'right', 'top']} style={styles.container}>
+            <SafeAreaView edges={['left', 'right', 'top', 'bottom']} style={styles.container}>
                 <ScrollView showsVerticalScrollIndicator={false} style={styles.scrollView}>
                     <View style={styles.header}>
                         <Text style={styles.name}>Luca Pignataro</Text>
                         <View style={styles.usernameContainer}>
-                            <Text style={styles.username}>@Cuentalucarda</Text>
-                            <TouchableOpacity style={styles.copyButton}>
-                                <Clipboard size={16} color={colors.violeta} />
+                            <TouchableOpacity onPress={Copy} style={styles.copyButton}>
+                                <Text style={styles.username}>@Cuentalucarda</Text>
+                                <ClipboardIcon size={16} color={colors.yellow} />
                             </TouchableOpacity>
                         </View>
                     </View>
@@ -49,6 +67,8 @@ export default function Page() {
                         </View>
                     ))}
                 </ScrollView>
+
+                <ToastManager config={toastConfig} />
             </SafeAreaView>
         </>
     )
@@ -58,6 +78,7 @@ const styles = StyleSheet.create({
     container: {
         flex: 1,
         backgroundColor: colors.back,
+        marginBottom: '17%',
     },
     scrollView: {
         // flex: 1,
@@ -80,10 +101,13 @@ const styles = StyleSheet.create({
     },
     username: {
         fontSize: 16,
-        color: colors.violeta,
+        color: colors.yellow,
         fontWeight: '500',
     },
     copyButton: {
+        flexDirection: 'row',
+        alignItems: 'center',
+        gap: '5%',
         padding: 4,
     },
     menu: {

@@ -39,8 +39,8 @@ export default function Page() {
 
     return (
         <>
-            <StatusBar style={'auto'} />
-
+            <StatusBar style={'light'} />
+            
             <SafeAreaView style={styles.container}>
 
                 {/* Icon */}

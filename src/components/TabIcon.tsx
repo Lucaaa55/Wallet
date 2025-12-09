@@ -2,16 +2,16 @@ import { Animated, Pressable, StyleSheet, TouchableOpacity, View } from 'react-n
 import * as Haptics from 'expo-haptics'
 import { useAnimatedStyle, useSharedValue, withSpring, withTiming } from 'react-native-reanimated'
 import { useEffect } from 'react'
-import { Home, LucideIcon } from 'lucide-react-native'
+import { House, icons } from 'lucide-react-native'
 import { colors } from '$/extra/colors'
 import { router } from 'expo-router'
 
-export default function TabIcon({ color, size, Icon, path}: {
+export default function TabIcon({ color, size, name}: {
     color: string,
     size: number,
-    Icon: LucideIcon,
-    path: string,
+    name: string,
 }) {
+    const LucideIcon = icons[name]
     const scale = useSharedValue(1)
 
     const scaleStyle = useAnimatedStyle(() => {
@@ -27,13 +27,13 @@ export default function TabIcon({ color, size, Icon, path}: {
     const onPress = async () => {
         scale.value = 1
         await Haptics.impactAsync(Haptics.ImpactFeedbackStyle.Medium)
-        router.push(path)
+        router.push('')
     }
 
     return (
         <Pressable onHoverIn={() => scale.value = 2} onHoverOut={() => onPress()}>
             <Animated.View style={[styles.iconContainer, scaleStyle]}>
-                <Icon color={color} size={size} strokeWidth={1.6} />
+                <LucideIcon color={color} size={size} strokeWidth={1.6} />
             </Animated.View>
         </Pressable>
     )
