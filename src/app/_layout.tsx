@@ -4,6 +4,10 @@ import { router, Stack } from 'expo-router'
 import { Tabs } from 'expo-router/tabs'
 import { StyleSheet, Text, View } from 'react-native'
 import * as Haptics from 'expo-haptics'
+import * as SplashScreen from 'expo-splash-screen'
+import { useEffect } from 'react'
+
+SplashScreen.preventAutoHideAsync()
 
 export default function Layout() {
     let [loaded] = useFonts({
@@ -21,9 +25,15 @@ export default function Layout() {
         'Aalto': require('../../public/fonts/Aalto/Medium.ttf'),
         'NSemibold': require('../../public/fonts/Nova/Semibold.otf'),
     })
-    
+
+    useEffect(() => {
+        if (loaded) {
+            SplashScreen.hide()
+        }
+    }, [loaded])
+
     if (!loaded) {
-        return null    
+        return null
     }
 
     return (

@@ -86,7 +86,7 @@ export default function Page() {
                 <ScrollView onScroll={handleScroll} style={styles.scrollView} refreshControl={<RefreshControl refreshing={refreshing} onRefresh={onRefresh} />}>
                     <TouchableOpacity activeOpacity={0.8} onPress={events.Datos} style={styles.view}>
                         <View style={styles.topContainer}>
-                            <SvgUri uri={'https://hatscripts.github.io/circle-flags/flags/eu.svg'} width={35} height={35} />
+                            <SvgUri uri={'https://hatscripts.github.io/circle-flags/flags/us.svg'} width={35} height={35} />
                             <View style={styles.dataContainer}>
                                 <Text style={styles.dateText}>Datos de la cuenta</Text>
                                 <ChevronRight size={20} strokeWidth={2} color={colors.light} />
@@ -106,7 +106,7 @@ export default function Page() {
                         <View style={styles.actionsButtons}>
                             {actions.map((button, index) => (
                                 <TouchableOpacity key={index} activeOpacity={0.8} onPress={button.onPress} style={styles.actionButton}>
-                                    <button.icon size={25} strokeWidth={2} color={colors.yellow} />
+                                    <button.icon size={25} strokeWidth={2} color={colors.blue} />
                                 </TouchableOpacity>
                             ))}
                         </View>
@@ -240,7 +240,7 @@ const styles = StyleSheet.create({
         justifyContent: 'center',
         width: '23%',
         aspectRatio: 1,
-        backgroundColor: colors.yellow + '25',
+        backgroundColor: colors.blueSoft,
         borderRadius: 999,
     },
     movementsContainer: {

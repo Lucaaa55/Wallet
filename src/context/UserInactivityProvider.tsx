@@ -15,20 +15,18 @@ export default function UserInactivityProvider({ children }: {
 
     const handleAppStateChange = async (nextAppState: any) => {
         if (nextAppState === 'inactive') {
-            router.push('(modals)/overlay')
+            router.push('/(modals)/overlay')
         } else {
-            if (router.canGoBack()) {
-                router.back()
-            }
+            router.canGoBack() && router.back()
         }
 
         if (nextAppState === 'background') {
             recordTime()
-        } else if (nextAppState === 'active' && appState.current.match(/background/)) {
+        } else if (appState.current.includes('background') && nextAppState === 'active') {
             const elapsed = Date.now() - (parseInt(await SecureStore.getItemAsync('startTime')))
 
-            if (elapsed >= 3000) {
-                router.push('(auth)/lock')
+            if (elapsed >= 2000) {
+                router.replace('/(auth)/lock')
             }
         }
 
@@ -36,11 +34,7 @@ export default function UserInactivityProvider({ children }: {
     }
 
     useEffect(() => {
-        const subscription = AppState.addEventListener('change', handleAppStateChange)
-
-        return () => {
-            subscription.remove()
-        }
+        AppState.addEventListener('change', handleAppStateChange)
     }, [])
 
     return children

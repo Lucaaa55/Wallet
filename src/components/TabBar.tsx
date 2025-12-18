@@ -15,12 +15,21 @@ export function TabBar({ state, descriptors, navigation }: BottomTabBarProps) {
                 const Icon = icons[route.params?.icon]
                 const isFocused = state.index === index
 
-                const onPress = () => {
-                    Haptics.impactAsync(Haptics.ImpactFeedbackStyle.Medium)
+                const onPress = async () => {
+                    await Haptics.impactAsync(Haptics.ImpactFeedbackStyle.Medium)
                     router.push(route.name === 'index' ? '/' : route.name)
                 }
                 
                 if (!Icon) return null
+
+
+                if (route.name === 'scan') {
+                    return (
+                        <TouchableOpacity onPress={onPress} key={index} activeOpacity={1} style={[styles.scan]}>
+                            <Icon size={25} color={colors.white} strokeWidth={1.6} />
+                        </TouchableOpacity>
+                    )
+                }
 
                 return (
                     <TouchableOpacity onPress={onPress} key={index} activeOpacity={1} style={[styles.tab]}>
@@ -44,12 +53,13 @@ const styles = StyleSheet.create({
         borderLeftWidth: 1,
         borderColor: colors.border,
         width: '100%',
-        paddingVertical: '7%',
+        height: '11%',
         justifyContent: 'space-between',
         flexDirection: 'row',
         alignItems: 'center',
         borderTopLeftRadius: 26,
         borderTopRightRadius: 26,
+        alignContent: 'center',
     },
     tab: {
         flex: 1,
@@ -62,6 +72,14 @@ const styles = StyleSheet.create({
             }
         ]
     },
+    sTab: {
+        width: 65,
+        height: 65,
+        borderRadius: 999,
+        alignItems: 'center',
+        justifyContent: 'center',
+        backgroundColor: colors.yellow,
+    },
     tabText: {
         color: colors.gray,
         fontSize: 11,
@@ -73,7 +91,6 @@ const styles = StyleSheet.create({
         alignItems: 'center',
         justifyContent: 'center',
         backgroundColor: colors.violet,
-        position: 'absolute',
-        bottom: '-10%',
+        marginBottom: '12%',
     },
 })

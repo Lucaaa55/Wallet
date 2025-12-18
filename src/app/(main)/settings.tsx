@@ -2,8 +2,8 @@ import { ScrollView, StyleSheet, Text, TouchableOpacity, View } from 'react-nati
 import { useEffect } from 'react'
 import { colors } from '$/extra/colors'
 import { useRouter } from 'expo-router'
-import { ChevronRight, Clipboard as ClipboardIcon } from 'lucide-react-native'
-import { SafeAreaView } from 'react-native-safe-area-context'
+import { ChevronRight, Clipboard as ClipboardIcon, LogOut } from 'lucide-react-native'
+import { SafeAreaView, useSafeAreaInsets } from 'react-native-safe-area-context'
 import { menuItems } from '$/extra/menu'
 import { StatusBar } from 'expo-status-bar'
 import * as Haptics from 'expo-haptics'
@@ -21,11 +21,17 @@ const toastConfig = {
 
 export default function Page() {
     const router = useRouter()
+    const insets = useSafeAreaInsets()
 
     const Copy = () => {
         Haptics.impactAsync(Haptics.ImpactFeedbackStyle.Medium)
         Clipboard.setStringAsync('@Cuentalucarda')
         Toast.success('Copiado')
+    }
+
+    const Logout = () => {
+        Haptics.impactAsync(Haptics.ImpactFeedbackStyle.Medium)
+        router.push('/(auth)/login')
     }
 
     useEffect(() => {
@@ -36,14 +42,14 @@ export default function Page() {
         <>
             <StatusBar style={'auto'} />
 
-            <SafeAreaView edges={['left', 'right', 'top', 'bottom']} style={styles.container}>
+            <SafeAreaView edges={['left', 'right', 'top']} style={[styles.container]}>
                 <ScrollView showsVerticalScrollIndicator={false} style={styles.scrollView}>
                     <View style={styles.header}>
                         <Text style={styles.name}>Luca Pignataro</Text>
                         <View style={styles.usernameContainer}>
                             <TouchableOpacity onPress={Copy} style={styles.copyButton}>
                                 <Text style={styles.username}>@Cuentalucarda</Text>
-                                <ClipboardIcon size={16} color={colors.yellow} />
+                                <ClipboardIcon size={16} color={colors.blue} />
                             </TouchableOpacity>
                         </View>
                     </View>
@@ -66,6 +72,11 @@ export default function Page() {
                             </View>
                         </View>
                     ))}
+
+                    <TouchableOpacity onPress={Logout} activeOpacity={0.7} style={styles.logoutButton}>
+                        <LogOut size={20} color={colors.red} />
+                        <Text style={styles.logoutButtonText}>Cerrar sesión</Text>
+                    </TouchableOpacity>
                 </ScrollView>
 
                 <ToastManager config={toastConfig} />
@@ -78,7 +89,6 @@ const styles = StyleSheet.create({
     container: {
         flex: 1,
         backgroundColor: colors.back,
-        marginBottom: '17%',
     },
     scrollView: {
         // flex: 1,
@@ -101,7 +111,7 @@ const styles = StyleSheet.create({
     },
     username: {
         fontSize: 16,
-        color: colors.yellow,
+        color: colors.blue,
         fontWeight: '500',
     },
     copyButton: {
@@ -150,5 +160,16 @@ const styles = StyleSheet.create({
         fontSize: 16,
         fontWeight: '500',
         color: colors.dark,
+    },
+    logoutButton: {
+        padding: '7%',
+        marginHorizontal: '5%',
+        flexDirection: 'row',
+        gap: '5%',
+    },
+    logoutButtonText: {
+        fontSize: 16,
+        fontWeight: '500',
+        color: colors.red,
     },
 })

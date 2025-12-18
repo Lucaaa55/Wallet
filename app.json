@@ -1,8 +1,8 @@
 {
   "expo": {
-    "name": "Toast",
-    "slug": "Toast",
-    "scheme": "com.toast.app",
+    "name": "Bold",
+    "slug": "Bold",
+    "scheme": "com.bold",
     "version": "1.0.0",
     "orientation": "portrait",
     "icon": "./assets/icon.png",
@@ -11,11 +11,11 @@
     "splash": {
       "image": "./assets/splash-icon.png",
       "resizeMode": "contain",
-      "backgroundColor": "#5F4FC8"
+      "backgroundColor": "#FFFFFF"
     },
     "ios": {
       "supportsTablet": true,
-      "bundleIdentifier": "com.luca.toast",
+      "bundleIdentifier": "com.luca.bold",
       "infoPlist": {
         "ITSAppUsesNonExemptEncryption": false,
         "LSApplicationQueriesSchemes": [
@@ -38,9 +38,9 @@
     "android": {
       "adaptiveIcon": {
         "foregroundImage": "./assets/adaptive-icon.png",
-        "backgroundColor": "#5F4FC8"
+        "backgroundColor": "#FFFFFF"
       },
-      "package": "com.luca.toast",
+      "package": "com.luca.bold",
       "permissions": [
         "android.permission.USE_BIOMETRIC",
         "android.permission.USE_FINGERPRINT",
@@ -68,12 +68,24 @@
         {
           "cameraPermissionText": "$(PRODUCT_NAME) needs access to your Camera."
         }
+      ],
+      [
+        "expo-splash-screen",
+        {
+          "backgroundColor": "#FFFFFF",
+          "image": "./assets/splash-icon.png",
+          "dark": {
+            "image": "./assets/splash-icon.png",
+            "backgroundColor": "#FFFFFF"
+          },
+          "imageWidth": 250
+        }
       ]
     ],
     "extra": {
       "router": {},
       "eas": {
-        "projectId": "4c16d70a-09e8-4164-a745-8daa9598264b"
+        "projectId": "31a99efe-c524-4f7b-b06c-d31313ea1f9e"
       }
     }
   }
