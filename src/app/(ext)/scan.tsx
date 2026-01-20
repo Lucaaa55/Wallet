@@ -51,7 +51,7 @@ export default function Page() {
                     Haptics.impactAsync(Haptics.ImpactFeedbackStyle.Light)
                     router.back()
                 }}>
-                    <ArrowLeft size={30} color={colors.yellow} />
+                    <ArrowLeft size={30} color={colors.blue} />
                 </TouchableOpacity>
 
                 <Camera codeScanner={codeScanner} torch={torch} device={camera} isActive={true} style={styles.camera} />

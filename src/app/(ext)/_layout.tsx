@@ -1,40 +1,52 @@
 import { colors } from '$/extra/colors'
-import { useFonts } from 'expo-font'
-import { router, Stack, Tabs } from 'expo-router'
-import { Drawer } from 'expo-router/drawer'
-import { StyleSheet, Text, View } from 'react-native'
-import * as Haptics from 'expo-haptics'
-import Svg, { Path } from 'react-native-svg'
-import { Home, CreditCard, UserCircle } from 'lucide-react-native'
+import { router, Stack } from 'expo-router'
+import { TouchableOpacity } from 'react-native'
+import { ArrowLeft } from 'lucide-react-native'
 
 export default function Layout() {
     return (
         <Stack
             screenOptions={{
-                headerShown: false,
+                headerTransparent: false,
+                headerTitleAlign: 'center',
+                headerShadowVisible: false,
+                headerStyle: {
+                    backgroundColor: 'transparent',
+                },
+                headerLeft: () => (
+                    <TouchableOpacity onPress={() => router.back()}>
+                        <ArrowLeft size={25} strokeWidth={1.6} color={colors.blue} />
+                    </TouchableOpacity>
+                ),
                 animation: 'default',
             }}
         >
             <Stack.Screen name={'index'} options={{
-                headerShown: false,
+                title: '',
             }} />
             <Stack.Screen name={'[transactionId]'} options={{
-                headerShown: false,
+                title: 'Transacción',
             }} />
             <Stack.Screen name={'datos'} options={{
-                headerShown: false,
+                title: 'Datos bancarios',
             }} />
             <Stack.Screen name={'links'} options={{
-                headerShown: false,
+                title: 'Links de pago',
             }} />
             <Stack.Screen name={'movements/ingresar'} options={{
-                headerShown: false,
+                title: 'Recibir dinero',
             }} />
             <Stack.Screen name={'movements/retirar'} options={{
-                headerShown: false,
+                title: 'Retirar dinero',
             }} />
             <Stack.Screen name={'scan'} options={{
                 headerShown: false,
+            }} />
+            <Stack.Screen name={'transactions'} options={{
+                title: 'Transacciones',
+            }} />
+            <Stack.Screen name={'more'} options={{
+                title: 'Más',
             }} />
         </Stack>
     )

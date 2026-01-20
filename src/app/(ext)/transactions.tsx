@@ -1,7 +1,8 @@
-import { StyleSheet, Text, View } from 'react-native'
-import { useEffect } from 'react'
+import { StyleSheet, Text } from 'react-native'
+import { useEffect, useRef, useState } from 'react'
 import { colors } from '$/extra/colors'
 import { useRouter } from 'expo-router'
+import { SafeAreaView } from 'react-native-safe-area-context'
 import { StatusBar } from 'expo-status-bar'
 
 export default function Page() {
@@ -15,9 +16,9 @@ export default function Page() {
         <>
             <StatusBar style={'auto'} />
 
-            <View style={styles.container}>
-                <Text>Retirar</Text>
-            </View>
+            <SafeAreaView style={styles.container}>
+                <Text>Transacciones</Text>
+            </SafeAreaView>
         </>
     )
 }

@@ -3,7 +3,7 @@ import { useEffect } from 'react'
 import { colors } from '$/extra/colors'
 import { useRouter } from 'expo-router'
 import { ChevronRight, Clipboard as ClipboardIcon, LogOut } from 'lucide-react-native'
-import { SafeAreaView, useSafeAreaInsets } from 'react-native-safe-area-context'
+import { SafeAreaView } from 'react-native-safe-area-context'
 import { menuItems } from '$/extra/menu'
 import { StatusBar } from 'expo-status-bar'
 import * as Haptics from 'expo-haptics'
@@ -21,7 +21,6 @@ const toastConfig = {
 
 export default function Page() {
     const router = useRouter()
-    const insets = useSafeAreaInsets()
 
     const Copy = () => {
         Haptics.impactAsync(Haptics.ImpactFeedbackStyle.Medium)

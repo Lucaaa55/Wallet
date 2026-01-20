@@ -6,6 +6,8 @@ export const movements = [
         amount: 100,
         date: '2025-01-01',
         type: 'income',
+        time: '10:00',
+        status: 'success',
     },
     {
         id: 2,
@@ -14,6 +16,8 @@ export const movements = [
         amount: 150,
         date: '2025-01-01',
         type: 'income',
+        time: '10:00',
+        status: 'success',
     },
     {
         id: 2,
@@ -22,6 +26,8 @@ export const movements = [
         amount: 150,
         date: '2025-01-01',
         type: 'income',
+        time: '10:00',
+        status: 'success',
     },
     {
         id: 2,
@@ -30,5 +36,7 @@ export const movements = [
         amount: 150,
         date: '2025-01-01',
         type: 'income',
+        time: '10:00',
+        status: 'success',
     },
 ]
