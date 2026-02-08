@@ -1,6 +1,10 @@
 import { colors } from '$/extra/colors'
 import { router, Stack } from 'expo-router'
+<<<<<<< HEAD
 import { Pressable, StyleSheet, TouchableOpacity } from 'react-native'
+=======
+import { TouchableOpacity } from 'react-native'
+>>>>>>> f009c096b443e01792bec5a493a5a52d259fb583
 import { ArrowLeft } from 'lucide-react-native'
 
 export default function Layout() {
@@ -14,9 +18,15 @@ export default function Layout() {
                     backgroundColor: 'transparent',
                 },
                 headerLeft: () => (
+<<<<<<< HEAD
                     <Pressable onPress={() => router.back()} style={styles.backButton}>
                         <ArrowLeft size={25} strokeWidth={1.6} color={colors.blue} />
                     </Pressable>
+=======
+                    <TouchableOpacity onPress={() => router.back()}>
+                        <ArrowLeft size={25} strokeWidth={1.6} color={colors.blue} />
+                    </TouchableOpacity>
+>>>>>>> f009c096b443e01792bec5a493a5a52d259fb583
                 ),
                 animation: 'default',
             }}

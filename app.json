@@ -1,8 +1,8 @@
 {
   "expo": {
-    "name": "Bold",
-    "slug": "Bold",
-    "scheme": "com.bold",
+    "name": "Wallet",
+    "slug": "Wallet",
+    "scheme": "com.wallet",
     "version": "1.0.0",
     "orientation": "portrait",
     "icon": "./assets/icon.png",
@@ -15,7 +15,7 @@
     },
     "ios": {
       "supportsTablet": true,
-      "bundleIdentifier": "com.luca.bold",
+      "bundleIdentifier": "com.wallet",
       "infoPlist": {
         "ITSAppUsesNonExemptEncryption": false,
         "LSApplicationQueriesSchemes": [
