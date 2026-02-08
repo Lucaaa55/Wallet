@@ -1,15 +1,9 @@
 import { colors } from '$/extra/colors'
-import { useFonts } from 'expo-font'
-import { router, Stack, Tabs } from 'expo-router'
-import { Drawer } from 'expo-router/drawer'
-import { Platform, StyleSheet, Text, View } from 'react-native'
-import * as Haptics from 'expo-haptics'
-import Svg, { Path } from 'react-native-svg'
-import { CreditCard, UserCircle, House, ScanQrCode } from 'lucide-react-native'
+import { Tabs } from 'expo-router'
+import { CreditCard, UserCircle, House } from 'lucide-react-native'
 import UserInactivityProvider from '@/context/UserInactivityProvider'
-import { TabBar } from '@/components/TabBar'
 import { HapticButton } from '@/components/HapticButton'
-import { SpecialButton } from '@/components/SpecialButton'
+import { Platform } from 'react-native'
 
 export default function Layout() {
     return (
@@ -26,7 +20,7 @@ export default function Layout() {
                     tabBarActiveTintColor: colors.blue,
                     tabBarInactiveTintColor: colors.gray,
                     tabBarStyle: {
-                        height: '11.5%',
+                        height: Platform.OS === 'ios' ? '11.5%' : '13%',
                         borderTopLeftRadius: 26,
                         borderTopRightRadius: 26,
                         borderTopWidth: 1,

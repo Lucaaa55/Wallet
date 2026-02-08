@@ -67,7 +67,7 @@ export default function Page() {
         <>
             <StatusBar style={'auto'} />
 
-            <SafeAreaView edges={['left', 'right', 'top', 'bottom']} style={styles.container}>
+            <SafeAreaView edges={['left', 'right', 'top']} style={styles.container}>
                 <View style={[styles.header, {
                     borderBottomColor: colors.border,
                     borderBottomWidth: scrollY > 0 ? 1 : 0,
@@ -86,7 +86,7 @@ export default function Page() {
                 <ScrollView onScroll={handleScroll} style={styles.scrollView} refreshControl={<RefreshControl refreshing={refreshing} onRefresh={onRefresh} />}>
                     <TouchableOpacity activeOpacity={0.8} onPress={events.Datos} style={styles.view}>
                         <View style={styles.topContainer}>
-                            <SvgUri uri={'https://hatscripts.github.io/circle-flags/flags/us.svg'} width={35} height={35} />
+                            <SvgUri uri={'https://hatscripts.github.io/circle-flags/flags/ar.svg'} width={35} height={35} />
                             <View style={styles.dataContainer}>
                                 <Text style={styles.dateText}>Datos de la cuenta</Text>
                                 <ChevronRight size={20} strokeWidth={2} color={colors.light} />
@@ -111,6 +111,27 @@ export default function Page() {
                             ))}
                         </View>
                     </TouchableOpacity>
+
+                    <View style={styles.movementsContainer}>
+                        <Text style={styles.movementsText}>Movimientos</Text>
+
+                        <ScrollView nestedScrollEnabled={true} showsVerticalScrollIndicator={false} style={styles.movementsScrollView}>
+                            {movements.map((movement, index) => (
+                                <View key={index} style={styles.movementItem}>
+                                    
+                                    <View style={styles.movementItemTextContainer}>
+                                        <Text style={styles.movementItemText}>{movement.description}</Text>
+                                        <Text style={styles.movementItemDate}>{movement.date}</Text>
+                                    </View>
+                                    <Text style={styles.movementItemAmount}>$ {movement.amount}</Text>
+                                </View>
+                            )).slice(0, 3)}
+                        </ScrollView>
+
+                        <TouchableOpacity activeOpacity={0.8} onPress={() => router.push('/transactions')} style={styles.movementsButton}>
+                            <Text style={styles.movementsButtonText}>Ver todos</Text>
+                        </TouchableOpacity>
+                    </View>
                 </ScrollView>
             </SafeAreaView>
         </>
@@ -167,10 +188,11 @@ const styles = StyleSheet.create({
         flexDirection: 'column',
         backgroundColor: colors.white,
         alignItems: 'center',
-        gap: '15%',
+        gap: 35,
         paddingVertical: '7%',
         padding: '3%',
         marginHorizontal: '5%',
+        marginBottom: '5%',
         borderWidth: 1,
         borderColor: colors.border,
     },
@@ -248,16 +270,17 @@ const styles = StyleSheet.create({
         flexDirection: 'column',
         alignItems: 'flex-start',
         justifyContent: 'center',
-        gap: '5%',
-        padding: '6%',
         marginHorizontal: '5%',
         backgroundColor: colors.white,
         borderWidth: 1,
         borderColor: colors.border,
         borderRadius: 12,
+        height: '50%',
+        padding: '6%',
+        gap: 15,
     },
     movementsText: {
-        fontSize: 18,
+        fontSize: 16,
         fontWeight: '500',
         color: colors.gray,
     },
@@ -277,5 +300,47 @@ const styles = StyleSheet.create({
     swiperImage: {
         width: 300,
         borderRadius: 12,
+    },
+    movementItem: {
+        display: 'flex',
+        flexDirection: 'row',
+        alignItems: 'center',
+        justifyContent: 'space-between',
+        gap: '5%',
+        width: '100%',
+    },
+    movementItemTextContainer: {
+        display: 'flex',
+        flexDirection: 'column',
+        alignItems: 'flex-start',
+        justifyContent: 'center',
+        gap: '2%',
+    },
+    movementItemText: {
+        fontSize: 15,
+        fontWeight: '500',
+        color: colors.black,
+    },
+    movementItemDate: {
+        fontSize: 12,
+        fontWeight: '500',
+        color: colors.gray,
+    },
+    movementItemAmount: {
+        fontSize: 15,
+        fontWeight: '500',
+        color: colors.black,
+    },
+    movementsScrollView: {},
+    movementsButton: {
+        alignItems: 'center',
+        justifyContent: 'center',
+        borderRadius: 12,
+        width: '100%',
+    },
+    movementsButtonText: {
+        fontSize: 15,
+        fontWeight: '500',
+        color: colors.blue,
     },
 })

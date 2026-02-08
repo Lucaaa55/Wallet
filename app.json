@@ -40,7 +40,7 @@
         "foregroundImage": "./assets/adaptive-icon.png",
         "backgroundColor": "#FFFFFF"
       },
-      "package": "com.luca.bold",
+      "package": "com.bold",
       "permissions": [
         "android.permission.USE_BIOMETRIC",
         "android.permission.USE_FINGERPRINT",
@@ -85,7 +85,7 @@
     "extra": {
       "router": {},
       "eas": {
-        "projectId": "31a99efe-c524-4f7b-b06c-d31313ea1f9e"
+        "projectId": "982cdea8-b01f-469a-aba5-ee8ca38abac2"
       }
     }
   }

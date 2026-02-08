@@ -20,12 +20,6 @@ export default function Page() {
         }
     })
 
-    const tStyle = useAnimatedStyle(() => {
-        return {
-            opacity: animatedOpacity.value,
-        }
-    })
-
     const Press = async (path: string) => {
         await Haptics.impactAsync(Haptics.ImpactFeedbackStyle.Medium)
         router.push(path)
@@ -40,13 +34,9 @@ export default function Page() {
 
     return (
         <>
-            <StatusBar style={'auto'} />
+            <StatusBar style={'light'} />
             
             <SafeAreaView style={styles.container}>
-                <View style={styles.top}>
-                    <Svg style={styles.melt} viewBox="0 0 1440 320"><Path fill={colors.white} fill-opacity="1" d="M0,192L20,197.3C40,203,80,213,120,197.3C160,181,200,139,240,133.3C280,128,320,160,360,176C400,192,440,192,480,181.3C520,171,560,149,600,144C640,139,680,149,720,144C760,139,800,117,840,117.3C880,117,920,139,960,149.3C1000,160,1040,160,1080,154.7C1120,149,1160,139,1200,112C1240,85,1280,43,1320,26.7C1360,11,1400,21,1420,26.7L1440,32L1440,0L1420,0C1400,0,1360,0,1320,0C1280,0,1240,0,1200,0C1160,0,1120,0,1080,0C1040,0,1000,0,960,0C920,0,880,0,840,0C800,0,760,0,720,0C680,0,640,0,600,0C560,0,520,0,480,0C440,0,400,0,360,0C320,0,280,0,240,0C200,0,160,0,120,0C80,0,40,0,20,0L0,0Z"></Path></Svg>
-                </View>
-
                 <Animated.View style={[styles.view, vStyle]}>
                     <TouchableOpacity activeOpacity={1} style={[styles.button, {
                         backgroundColor: colors.soft,
@@ -56,7 +46,7 @@ export default function Page() {
                         }]}>Ya tengo cuenta</Text>
                     </TouchableOpacity>
                     <TouchableOpacity activeOpacity={1} style={[styles.button, {
-                        backgroundColor: colors.violet,
+                        backgroundColor: colors.blue,
                     }]} onPress={() => Press('/register')}>
                         <Text style={[styles.buttonText, {
                             color: colors.white,
@@ -75,7 +65,7 @@ const styles = StyleSheet.create({
         flexDirection: 'column',
         alignItems: 'center',
         flex: 1,
-        backgroundColor: colors.yellow,
+        backgroundColor: colors.blue,
     },
     top: {
         position: 'absolute',

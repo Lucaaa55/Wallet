@@ -30,6 +30,9 @@ export default function Layout() {
             <Stack.Screen name={'onboarding/otp'} options={{
                 headerShown: false,
             }} />
+            <Stack.Screen name={'onboarding/quiz'} options={{
+                headerShown: false,
+            }} />
         </Stack>
     )
 }

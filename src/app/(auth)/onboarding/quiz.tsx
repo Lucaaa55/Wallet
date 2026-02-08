@@ -1,22 +1,13 @@
-import { StatusBar, StyleSheet } from 'react-native'
-import { useEffect } from 'react'
-import { colors } from '$/extra/colors'
-import { useRouter } from 'expo-router'
+import { StatusBar, StyleSheet, Text } from 'react-native'
 import { SafeAreaView } from 'react-native-safe-area-context'
 
 export default function Page() {
-    const router = useRouter()
-
-    useEffect(() => {
-        
-    }, [])
-
     return (
         <>
             <StatusBar barStyle={'default'} />
 
             <SafeAreaView style={styles.container}>
-                
+                <Text>Quiz</Text>
             </SafeAreaView>
         </>
     )
@@ -24,11 +15,8 @@ export default function Page() {
 
 const styles = StyleSheet.create({
     container: {
-        display: 'flex',
-        justifyContent: 'center',
-        flexDirection: 'column',
-        alignItems: 'center',
         flex: 1,
-        backgroundColor: colors.white,
+        justifyContent: 'center',
+        alignItems: 'center',
     },
 })

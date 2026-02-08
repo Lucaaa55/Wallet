@@ -6,6 +6,7 @@ import * as Haptics from 'expo-haptics'
 import { ArrowLeft } from 'lucide-react-native'
 import { SafeAreaView } from 'react-native-safe-area-context'
 import { StatusBar } from 'expo-status-bar'
+import validator from 'validator'
 
 export default function Page() {
     const router = useRouter()
@@ -17,9 +18,14 @@ export default function Page() {
     const Press = async () => {
         setContinued(true)
 
-        if (email.length > 0 && email.includes('@')) {
+        if (validator.isEmail(email)) {
             Haptics.impactAsync(Haptics.ImpactFeedbackStyle.Medium)
-            router.push('(main)')
+            router.push({
+                pathname: '(auth)/onboarding/otp',
+                params: {
+                    email: email,
+                },
+            })
         } else {
             Haptics.notificationAsync(Haptics.NotificationFeedbackType.Error)
             setError(true)
@@ -33,8 +39,8 @@ export default function Page() {
 
     useEffect(() => {
         if (continued) {
-            if (email.length > 0 && email.includes('@')) {
-                setError(false)  
+            if (validator.isEmail(email)) {
+                setError(false)
             } else {
                 setError(true)
             }
@@ -51,7 +57,7 @@ export default function Page() {
                         Haptics.impactAsync(Haptics.ImpactFeedbackStyle.Light)
                         router.push('(auth)')
                     }}>
-                        <ArrowLeft size={30} color={colors.violet} />
+                        <ArrowLeft size={30} color={colors.blue} />
                     </TouchableOpacity>
 
                     <View style={styles.headerTitle}>
@@ -78,7 +84,7 @@ export default function Page() {
 
                 <View style={styles.bottomContainer}>
                     <TouchableOpacity disabled={email.length > 0 ? false : true} activeOpacity={1} style={[styles.bottomButton, {
-                        backgroundColor: email.length > 0 ? colors.violet : colors.soft,
+                        backgroundColor: email.length > 0 ? colors.blue : colors.soft,
                     }]} onPress={Press}>
                         <Text style={[styles.bottomButtonText, {
                             color: email.length > 0 ? colors.white : colors.gray,
@@ -188,7 +194,7 @@ const styles = StyleSheet.create({
     bottomTextButtonText: {
         fontSize: 13,
         fontWeight: '600',
-        color: colors.violet,
+        color: colors.blue,
         textDecorationStyle: 'solid',
         textDecorationLine: 'underline',
     },

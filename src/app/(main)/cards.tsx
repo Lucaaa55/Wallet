@@ -20,7 +20,7 @@ export default function Page() {
     }
 
     useEffect(() => {
-
+        
     }, [])
 
     return (
@@ -40,7 +40,7 @@ export default function Page() {
                                 </View>
 
                                 <Pressable onPress={() => Press(tarjeta.id)}>
-                                    <LinearGradientComponent colors={[colors.blue, colors.blueSoft]} start={{ x: 0.1, y: 0.2 }} end={{ x: 1, y: 0.8 }} style={styles.cardContainer}>
+                                    <LinearGradientComponent colors={[colors.blue, colors.blueSoft]} start={{ x: 0.1, y: 0.9 }} end={{ x: 1, y: 0.1 }} style={styles.cardContainer}>
                                         <View style={styles.top}>
                                             <Text style={styles.cardBank}>Mantecard</Text>
                                             <ChevronRight size={30} color={colors.white} strokeWidth={1.5} />
